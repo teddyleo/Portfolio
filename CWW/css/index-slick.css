@@ -1,0 +1,123 @@
+#logodiv {
+    width: 90%;
+    max-width: 420px;
+    margin: auto;
+}
+
+#logo2 {
+    float: left;
+    padding: 5px 0 0 5px;
+    height: 100%;
+    width: 100%;
+}
+
+#menu2 {
+    display: none;
+}
+
+.mobnavbar .menu {
+    width: 100%;
+    height: 30px;
+}
+
+.mobnavbar #menu,
+.mobnavbar #menu2 {
+    height: 30px;
+    width: 100%;
+    font-size: 12px;
+    margin: 0;
+}
+
+.menu-items {
+    display: none;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    font-size: 17px;
+    padding: 10px;
+    background-color: #EAB4C1;
+}
+
+.menu-items button {
+    padding: 5px;
+    font-family: Verdana;
+}
+
+.mobnavbar li {
+    list-style-type: none;
+    position: relative;
+}
+
+.mobnavbar button {
+    width: 100%;
+}
+
+.slick-slide {
+    margin: 10px 3px 0 3px !important;
+    padding: 0 !important;
+}
+
+.slick-prev {
+    position: absolute;
+    top: 43%;
+    z-index: 2;
+    font-size: 20px;
+    padding: 5px;
+    opacity: 0.7;
+}
+
+.slick-next {
+    position: absolute;
+    top: 43%;
+    right: 0;
+    z-index: 2;
+    font-size: 20px;
+    padding: 5px;
+    opacity: 0.7;
+}
+
+.mobfooter {
+    padding: 5px;
+    background-color: #EAB4C1;
+    text-align: center;
+    font-size: 15px;
+}
+
+.mobfooter a {
+    padding: 5px;
+    font-family: arvo;
+    color: white;
+}
+
+.mobfooter a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.mobfooter a:visited {
+    text-decoration: none;
+}
+
+@media screen and (min-width: 420px) and (max-width: 759px) {
+    .menu-items {
+        font-size: 17px;
+    }
+    .menu-items button {
+        padding: 5px;
+    }
+    .mobfooter {
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .menu-items {
+        font-size: 20px;
+    }
+    .menu-items button {
+        padding: 5px;
+    }
+    .mobfooter {
+        font-size: 18px;
+    }
+}
