@@ -1,0 +1,9 @@
+<div *ngFor="let project of projects" class="row">
+    <div *ngFor="let item of project.items" class="p5container col-sm-6">
+        <div class="well">
+            <h1>{{ item.name }}</h1>
+            <div class="item" id="{{ item.id }}"></div>
+            <p>{{ item.description }}</p>
+        </div>
+    </div>
+</div>

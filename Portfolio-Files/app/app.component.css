@@ -1,0 +1,15 @@
+.logo {
+    height: 30px;
+    width: 30px;
+    margin: 10px 15px 10px 0;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    color: white;
+    cursor: default;
+}
+
+.navbar-nav {
+    font-size: 18px;
+}

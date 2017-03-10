@@ -1,0 +1,114 @@
+<div class="container">
+    <div class="col-sm-4 card">
+        <img src="https://scontent-syd2-1.xx.fbcdn.net/v/t1.0-9/10505522_10152727160963170_1474291223784022243_n.jpg?oh=6a110a70f39bad1c1842368b492f929d&oe=592AEA0D">
+        <div class="well well-sm">
+            <h1>I am Leo Ng.</h1>
+            <p>
+                I am a UQ graduate looking to start my career in web development.
+            </p>
+        </div>
+    </div>
+    <div class="col-sm-8 well my-info noselect">
+        <button class="btn btn-lg btn-block btn-info btn1" *ngIf="tab != 'exp'" (click)="tab = 'exp'">
+      Experience 
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </button>
+        <button class="btn btn-lg btn-block btn-info btn2" *ngIf="tab == 'exp'" (click)="tab = ''">
+      Experience 
+      <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </button>
+        <div class="well well2 active1" *ngIf="tab == 'exp'">
+            <div *ngFor="let experience of experiences">
+                <div class="well well-sm experience" *ngIf="exptab != experience.tab" (click)="exptab = experience.tab">
+                    <h4 class="exp-button">
+                        {{ experience.title }}
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    </h4>
+                </div>
+                <div class="well well-sm experience" *ngIf="exptab == experience.tab" (click)="exptab = ''">
+                    <div class="experience-content">
+                        <h3 class="exp-button">
+                            {{ experience.title }}
+                            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                        </h3>
+                        <p>{{ experience.description }}</p>
+                        <h4>Experiences: </h4>
+                        <ul *ngFor="let exp of experience.experiences">
+                            <li>{{ exp }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-block btn-info btn1" *ngIf="tab != 'edu'" (click)="tab = 'edu'">
+      Education 
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </button>
+        <button class="btn btn-lg btn-block btn-info btn2" *ngIf="tab == 'edu'" (click)="tab = ''">
+      Education 
+      <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </button>
+        <div class="well well2 active2" *ngIf="tab == 'edu'">
+            <h2>University of Queensland <small>(2014 - 2016)</small></h2>
+            <p>Completed a Bachelor of Information Technology Degree, with a major in Computer Systems and Networks with a GPA of 5.458.</p>
+        </div>
+        <button class="btn btn-lg btn-block btn-info btn1" *ngIf="tab != 'ski'" (click)="tab = 'ski'">
+      Skills 
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </button>
+        <button class="btn btn-lg btn-block btn-info btn2" *ngIf="tab == 'ski'" (click)="tab = ''">
+      Skills 
+      <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </button>
+        <div class="well well2 active3" *ngIf="tab == 'ski'">
+            <h2>Languages</h2>
+            <ul class="list-group">
+                <li class="list-group-item col-sm-4">Java</li>
+                <li class="list-group-item col-sm-4">C</li>
+                <li class="list-group-item col-sm-4">Python</li>
+                <li class="list-group-item col-sm-4">HTML/CSS/JS</li>
+                <li class="list-group-item col-sm-4">MySQL</li>
+                <li class="list-group-item col-sm-4" li>PHP</li>
+                <li class="list-group-item col-sm-4">XML/Json</li>
+                <li class="list-group-item col-sm-4">AJAX</li>
+            </ul>
+            <div class="clear"></div>
+            <h2>Knowledge</h2>
+            <ul class="list-group">
+                <li class="list-group-item col-md-6">Design Thinking</li>
+                <li class="list-group-item col-md-6">Web Design</li>
+                <li class="list-group-item col-md-6">Graphics Design</li>
+                <li class="list-group-item col-md-6">Software Engineering</li>
+                <li class="list-group-item col-md-6">Computer Networks</li>
+                <li class="list-group-item col-md-6">Database Management</li>
+                <li class="list-group-item col-md-6">Operating Systems Architecture</li>
+                <li class="list-group-item col-md-6">Information Security</li>
+            </ul>
+            <div class="clear"></div>
+            <h2>Software/Tools</h2>
+            <ul class="list-group">
+                <li class="list-group-item col-sm-4">jQuery</li>
+                <li class="list-group-item col-sm-4">AngularJS</li>
+                <li class="list-group-item col-sm-4">Bootstrap</li>
+                <li class="list-group-item col-sm-4">SourceTree</li>
+                <li class="list-group-item col-sm-4">Git</li>
+                <li class="list-group-item col-sm-4">Trello</li>
+                <li class="list-group-item col-sm-4">Eclipse IDE</li>
+                <li class="list-group-item col-sm-4">InDesign</li>
+                <li class="list-group-item col-sm-4">Illustrator</li>
+                <li class="list-group-item col-sm-4">XAMPP</li>
+                <li class="list-group-item col-sm-4">FileZilla</li>
+                <li class="list-group-item col-sm-4">MATLAB</li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<div *ngFor="let project of projects" class="row">
+    <div *ngFor="let item of project.items" class="p5container col-sm-4">
+        <h3>{{ item.name }}</h3>
+        <div id="{{ item.id }}"></div>
+        <p>{{ item.description }}</p>
+    </div>
+</div>

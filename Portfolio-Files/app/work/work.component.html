@@ -1,0 +1,60 @@
+<div class="col-sm-4" *ngFor="let work of works">
+    <div class="thumbnail well">
+        <div *ngIf="work.overflow">
+            <h1>{{ work.title }}</h1>
+            <img class="img-thumbnail" src='{{ work.img }}'>
+            <div *ngIf="work.expand">
+                <p>{{ work.description }}</p>
+                <div *ngIf="work.linkavail">
+                    <div *ngIf="work.outlink">
+                        <a href="{{ work.link }}" target="_blank">
+                            <button class="btn btn-primary btn-block btn-lg">Visit</button>
+                        </a>
+                    </div>
+                    <div *ngIf="!work.outlink">
+                        <a href="{{ work.link }}" target="">
+                            <button class="btn btn-primary btn-block btn-lg">Visit</button>
+                        </a>
+                    </div>
+                </div>
+                <div *ngIf="!work.linkavail">
+                    <button class="btn btn-primary btn-block btn-lg disabled">Visit</button>
+                </div>
+                <button class="btn btn-success btn-block btn-lg" (click)="work.expand = !work.expand">Close</button>
+            </div>
+            <button class="btn btn-success btn-block btn-lg" *ngIf="!work.expand" (click)="work.expand = !work.expand">Details</button>
+        </div>
+        <div *ngIf="!work.overflow">
+            <h1>{{ work.title }}</h1>
+            <img class="img-thumbnail" src='{{ work.img }}'>
+            <p>{{ work.description }}</p>
+            <div *ngIf="work.linkavail">
+                <div *ngIf="work.outlink">
+                    <a href="{{ work.link }}" target="_blank">
+                        <button class="btn btn-primary btn-block btn-lg">Visit</button>
+                    </a>
+                </div>
+                <div *ngIf="!work.outlink">
+                    <a href="{{ work.link }}" target="">
+                        <button class="btn btn-primary btn-block btn-lg">Visit</button>
+                    </a>
+                </div>
+            </div>
+            <div *ngIf="!work.linkavail">
+                <button class="btn btn-primary btn-block btn-lg disabled">Visit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-12 container soon">
+    <h2>More coming soon...</h2>
+</div>
+
+<div *ngFor="let project of projects" class="row">
+    <div *ngFor="let item of project.items" class="p5container col-sm-4">
+        <h3>{{ item.name }}</h3>
+        <div id="{{ item.id }}"></div>
+        <p>{{ item.description }}</p>
+    </div>
+</div>

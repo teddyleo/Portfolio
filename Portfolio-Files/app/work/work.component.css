@@ -1,0 +1,63 @@
+img {
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    margin: 10px 0;
+}
+
+button .btn {
+    position: absolute;
+    bottom: 0;
+}
+
+.thumbnail {
+    font-size: 20px;
+    height: 465px;
+    overflow: hidden;
+    padding: 10px;
+    opacity: 0.7;
+}
+
+.thumbnail:hover {
+    min-height: 465px;
+    height: auto;
+    z-index: 1;
+    opacity: 1;
+}
+
+.thumbnail:hover img {
+    width: 100%;
+}
+
+.soon {
+    text-align: center;
+}
+
+@media screen and (max-width: 1025px) {
+    img {
+        width: 100%;
+        opacity: 1;
+    }
+    .thumbnail {
+        overflow: visible;
+        height: auto;
+        opacity: 1;
+        height: auto;
+    }
+    .thumbnail:hover {
+        min-height: 0;
+        height: auto;
+    }
+}
+
+.p5container {
+    display: none;
+}

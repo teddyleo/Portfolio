@@ -1,0 +1,103 @@
+p {
+    font-size: 20px;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.well {
+    border-radius: 10px;
+}
+
+.well2 {
+    background-color: white;
+}
+
+.well2 h2 {
+    margin: 10px;
+    text-align: center;
+}
+
+.card .well-sm {
+    border-radius: 0 0 10px 10px;
+}
+
+.container,
+.card {
+    padding: 0 3px;
+}
+
+.clear {
+    clear: both;
+}
+
+.active1,
+.active2,
+.active3 {
+    border-radius: 0 0 10px 10px;
+}
+
+.active2,
+.active3 {
+    cursor: default;
+}
+
+.active3 {
+    padding: 0 19px 19px 19px;
+    margin-bottom: 0;
+}
+
+.active3 h2 {
+    margin: 5px 0;
+}
+
+.experience {
+    cursor: pointer;
+}
+
+.exp-button {
+    text-align: center;
+}
+
+.exp-button:hover {
+    font-size: 24px;
+    margin: 7px;
+}
+
+.experience h3 {
+    margin: 10px 0;
+}
+
+.experience-content p {
+    font-size: 18px;
+}
+
+.my-info .btn1 {
+    border-radius: 10px;
+}
+
+.my-info .btn2 {
+    border-radius: 10px 10px 0 0;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.p5container {
+    display: none;
+}
