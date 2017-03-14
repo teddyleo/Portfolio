@@ -26,7 +26,7 @@ export const experiences = [
     }, {
 
         tab: "std3",
-        title: "Studio - Proposal",
+        title: "UQ Solar - Proposal",
         description: "This studio-based course allowed me to develop a proposal for a new implementation of the UQ’s Photovoltaic Array Live Data Feed, UQ Solar. The implementation included the use of UX design, requirements elicitation, design specification, professional client communication, and working prototype proposals. The development process made use of a Scrum process, with the use of Trello boards and Git repositories.",
         experiences: [
 

@@ -8,13 +8,18 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { WorkComponent } from './work/work.component';
 import { PfiveComponent } from './pfive/pfive.component';
+import { NorthwindsComponent } from './northwinds/northwinds.component';
+import { HTTPComponent } from './northwinds/http.component';
+import { HTTPService } from './northwinds/http.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     WorkComponent,
-    PfiveComponent
+    PfiveComponent,
+    NorthwindsComponent, 
+    HTTPComponent
   ],
   imports: [
     BrowserModule,
@@ -30,10 +35,13 @@ import { PfiveComponent } from './pfive/pfive.component';
       }, {
         path: 'pfive',
         component: PfiveComponent
+      }, {
+        path: 'northwinds',
+        component: NorthwindsComponent
       }
     ])
   ],
-  providers: [],
+  providers: [HTTPService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

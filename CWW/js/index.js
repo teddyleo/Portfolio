@@ -47,14 +47,34 @@ $(document).ready(function() {
 
 });
 
-function show_images() {
+function show_content() {
 
     $(".uil-ring-css").hide("fast");
     $(".content").show("fast");
 
+    if ($(window).width() > 1180) {
+
+        $(".navbar").show();
+        $(".footer").show();
+        $("#front-photos1").show();
+        $("#front-photos").hide();
+        $(".mobnavbar").hide();
+        $(".mobfooter").hide();
+
+    } else {
+
+        $(".navbar").hide();
+        $(".footer").hide();
+        $("#front-photos1").hide();
+        $("#front-photos").show();
+        $(".mobnavbar").show();
+        $(".mobfooter").show();
+
+    }
+
 }
 
-window.onload = show_images;
+window.onload = show_content;
 
 function carousel() {
 

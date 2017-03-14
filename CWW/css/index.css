@@ -1,10 +1,7 @@
-html, 
-body {
-    
-    overflow: hidden;
-    /* background-image: url("../images/landing_background.jpg");
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    background-color: black; */
-    
+.navbar,
+.mobnavbar,
+.content,
+.footer,
+.mobfooter {
+    display: none;
 }

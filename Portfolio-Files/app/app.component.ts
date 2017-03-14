@@ -4,6 +4,8 @@ import { RouterModule }   from '@angular/router';
 import { WorkComponent } from './work/work.component';
 import { AboutComponent } from './about/about.component';
 import { PfiveComponent } from './pfive/pfive.component';
+import { NorthwindsComponent } from './northwinds/northwinds.component';
+import { HTTPComponent } from './northwinds/http.component';
 
 RouterModule.forRoot([
   {
@@ -15,6 +17,9 @@ RouterModule.forRoot([
   }, {
     path: 'pfive',
     component: PfiveComponent
+  }, {
+    path: 'northwinds',
+    component: NorthwindsComponent
   }
 ])
 

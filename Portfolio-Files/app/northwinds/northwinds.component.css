@@ -1,0 +1,11 @@
+.p5container {
+    display: none;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}

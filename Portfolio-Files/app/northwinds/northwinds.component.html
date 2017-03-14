@@ -1,0 +1,28 @@
+<div class="col-md-2">
+    <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a>Tables</a></li>
+        <li><a>Queries</a></li>
+    </ul>
+</div>
+
+<div class="tab-content col-md-10">
+    <div id="tables" class="tab active">
+        <div class="col-md-3">
+            <ul class="nav nav-pills nav-stacked" *ngFor="let table of tables">
+                <li id="{{ table }}"><a>{{ table }}</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <http></http>
+            <p id="tables"></p>
+        </div>
+    </div>
+</div>
+
+<div *ngFor="let project of projects" class="row">
+    <div *ngFor="let item of project.items" class="p5container col-sm-4">
+        <h3>{{ item.name }}</h3>
+        <div id="{{ item.id }}"></div>
+        <p>{{ item.description }}</p>
+    </div>
+</div>

@@ -2,6 +2,7 @@ img {
     display: block;
     width: 90%;
     margin: auto;
+    cursor: pointer;
 }
 
 h1 {
@@ -39,6 +40,7 @@ button .btn {
 
 .soon {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 @media screen and (max-width: 1025px) {
