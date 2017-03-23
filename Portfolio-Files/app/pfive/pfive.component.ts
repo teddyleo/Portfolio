@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { projects } from './../data/p5';
-import './../../assets/js/p5.min.js';
-import './../../assets/js/sketch.js';
 
 @Component({
     selector: 'app-pfive',

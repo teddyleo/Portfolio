@@ -6,7 +6,7 @@ export const works = [
             title: "UQ Solar",
             description: "This studio-based course allowed me to develop a proposal for a new implementation of the UQ’s Photovoltaic Array Live Data Feed, UQ Solar.",
             linkavail: true, 
-            link: "http://deco3800-wattsup.uqcloud.net",
+            link: "/assets/uqsolar",
             outlink: true,
             expand: false,
             overflow: false
@@ -41,10 +41,21 @@ export const works = [
             title: "p5 Portfolio",
             description: "This section consists of projects implemented using the p5.js programming language.",
             linkavail: true, 
-            link: "/pfive",
+            link: "/assets/pfive/",
             outlink: false,
             expand: false,
             overflow: true
+
+        },{
+
+            img: "assets/images/mysqllogo.png",
+            title: "Northwind Database",
+            description: "This section displays the outcome of accessing a MySQL database with PHP and displaying the data.",
+            linkavail: true, 
+            link: "/northwinds",
+            outlink: false,
+            expand: false,
+            overflow: false
 
         }
     ]

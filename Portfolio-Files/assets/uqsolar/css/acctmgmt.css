@@ -1,0 +1,80 @@
+.formdiv{
+	width: 400px;
+	padding: 0 0 0;
+	margin: auto;
+	float: left;
+}
+
+.content {
+	width: 1600px;
+	margin: auto;
+}
+
+.formcontainer {
+	width: 800px;
+	margin: auto;
+}
+
+.form {
+	background: white;
+	position: relative;
+	z-index: 1;
+	max-width: 250px;
+
+	padding: 2px;
+
+}
+
+.form input {
+	font-family: "Roboto", sans-serif;
+	height: 25px;
+	outline: 0;
+	background: #f2f2f2;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 5px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+.form input[name=permission] {
+	margin: auto;
+	height: 13px;
+}
+
+.form input[id=radiostaff] {
+	margin-right: 40px;
+}
+
+.form .message {
+	margin: 15px 0 0;
+	color: #b3b3b3;
+	font-family: 'Droid Serif';
+	font-size: 12px;
+}
+.form .message a {
+	color: black;
+	text-decoration: none;
+}
+
+.acctmanage-info {
+	width: 800px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin: auto;
+}
+
+.inputhelp {
+	text-align: left;
+	margin-bottom: 0;
+}
+
+.formErrorMessage {
+	color: white;
+	background-color: #d31111;
+	font-size: 15px;
+	padding: 9px;
+	margin-bottom: 25px;
+	border-radius: 4px;
+	display: none;
+}

@@ -1,20 +1,361 @@
-<div class="col-md-2">
-    <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a>Tables</a></li>
-        <li><a>Queries</a></li>
+<div class="col-md-2 well">
+    <ul class="nav nav-pills nav-stacked" *ngFor="let tab of tabNames">
+        <li class="active" *ngIf="tabID == tab.id"><a>{{ tab.name }}</a></li>
+        <li *ngIf="tabID != tab.id" (click)="tabID = tab.id"><a>{{ tab.name }}</a></li>
     </ul>
 </div>
 
-<div class="tab-content col-md-10">
-    <div id="tables" class="tab active">
-        <div class="col-md-3">
-            <ul class="nav nav-pills nav-stacked" *ngFor="let table of tables">
-                <li id="{{ table }}"><a>{{ table }}</a></li>
-            </ul>
+<div class="col-md-3 well" *ngIf="tabID == 1">
+    <ul class="nav nav-pills nav-stacked" *ngFor="let tab of tableNames">
+        <li id="{{ tab.name }}" *ngIf="tab.id == tableTabID" class="active"><a>{{ tab.name }}</a></li>
+        <li id="{{ tab.name }}" *ngIf="tab.id != tableTabID" (click)="tableTabID = tab.id"><a>{{ tab.name }}</a></li>
+    </ul>
+</div>
+
+<div class="col-md-3 well" *ngIf="tabID == 2">
+    <ul class="nav nav-pills nav-stacked" *ngFor="let tab of queryNames">
+        <li id="{{ tab.name }}" *ngIf="tab.id == queryTabID" class="active"><a>{{ tab.name }}</a></li>
+        <li id="{{ tab.name }}" *ngIf="tab.id != queryTabID" (click)="queryTabID = tab.id"><a>{{ tab.name }}</a></li>
+    </ul>
+</div>
+
+<div class="tab-content col-md-7">
+    <div id="tableTabs" class="tab active" *ngIf="tabID == 1">
+        <div class="col-md-12 tableDiv">
+            <table *ngIf="tableTabID == 1" class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Company</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Job Title</th>
+                    <th>Business Phone</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State / Province</th>
+                </tr>
+                <tr *ngFor="let entry of tables.customers">
+                    <td>{{ entry.ID }}</td>
+                    <td>{{ entry.Company }}</td>
+                    <td>{{ entry.FirstName }}</td>
+                    <td>{{ entry.LastName }}</td>
+                    <td>{{ entry.JobTitle }}</td>
+                    <td>{{ entry.BusinessPhone }}</td>
+                    <td>{{ entry.Address }}</td>
+                    <td>{{ entry.City }}</td>
+                    <td>{{ entry.StateProvince }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 2" class="table table-striped">
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Privilege ID</th>
+                </tr>
+                <tr *ngFor="let entry of tables.employeePrivileges">
+                    <td>{{ entry.EmployeeID }}</td>
+                    <td>{{ entry.PrivilegeID }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 3" class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Company</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Job Title</th>
+                </tr>
+                <tr *ngFor="let entry of tables.employees">
+                    <td>{{ entry.ID }}</td>
+                    <td>{{ entry.Company }}</td>
+                    <td>{{ entry.FirstName }}</td>
+                    <td>{{ entry.LastName }}</td>
+                    <td>{{ entry.EmailAddress }}</td>
+                    <td>{{ entry.JobTitle }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 4" class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Type Name</th>
+                </tr>
+                <tr *ngFor="let entry of tables.inventoryTransactionTypes">
+                    <td>{{ entry.ID }}</td>
+                    <td>{{ entry.TypeName }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 5" class="table table-striped">
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Transaction Type</th>
+                    <th>Transaction Created Date</th>
+                    <th>Transaction Modified Date</th>
+                    <th>Product ID</th>
+                    <th>Quantity</th>
+                </tr>
+                <tr *ngFor="let entry of tables.inventoryTransactions">
+                    <td>{{ entry.TransactionID }}</td>
+                    <td>{{ entry.TransactionType }}</td>
+                    <td>{{ entry.TransactionCreatedDate }}</td>
+                    <td>{{ entry.TransactionModifiedDate }}</td>
+                    <td>{{ entry.ProductID }}</td>
+                    <td>{{ entry.Quantity }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 6" class="table table-striped">
+                <tr>
+                    <th>Invoice ID</th>
+                    <th>Order ID</th>
+                    <th>Invoice Date</th>
+                </tr>
+                <tr *ngFor="let entry of tables.invoices">
+                    <td>{{ entry.InvoiceID }}</td>
+                    <td>{{ entry.OrderID }}</td>
+                    <td>{{ entry.InvoiceDate }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 7" class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Order ID</th>
+                    <th>Product ID</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Status ID</th>
+                    <th>Inventory ID</th>
+                </tr>
+                <tr *ngFor="let entry of tables.orderDetails">
+                    <td>{{ entry.ID }}</td>
+                    <td>{{ entry.OrderID }}</td>
+                    <td>{{ entry.ProductID }}</td>
+                    <td>{{ entry.Quantity }}</td>
+                    <td>{{ entry.UnitPrice }}</td>
+                    <td>{{ entry.StatusID }}</td>
+                    <td>{{ entry.InventoryID }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 8" class="table table-striped">
+                <tr>
+                    <th>Status ID</th>
+                    <th>Status Name</th>
+                </tr>
+                <tr *ngFor="let entry of tables.orderDetailsStatus">
+                    <td>{{ entry.StatusID }}</td>
+                    <td>{{ entry.StatusName }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 9" class="table table-striped">
+                <tr>
+                    <th>Order ID</th>
+                    <th>Employee ID</th>
+                    <th>Customer ID</th>
+                    <th>Order Date</th>
+                    <th>Shipped Date</th>
+                    <th>Shipper ID</th>
+                    <th>Ship Name</th>
+                    <th>Ship Address</th>
+                </tr>
+                <tr *ngFor="let entry of tables.orders">
+                    <td>{{ entry.OrderID }}</td>
+                    <td>{{ entry.EmployeeID }}</td>
+                    <td>{{ entry.CustomerID }}</td>
+                    <td>{{ entry.OrderDate }}</td>
+                    <td>{{ entry.ShippedDate }}</td>
+                    <td>{{ entry.ShipperID }}</td>
+                    <td>{{ entry.ShipName }}</td>
+                    <td>{{ entry.ShipAddress }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 10" class="table table-striped">
+                <tr>
+                    <th>Status ID</th>
+                    <th>Status Name</th>
+                </tr>
+                <tr *ngFor="let entry of tables.ordersStatus">
+                    <td>{{ entry.StatusID }}</td>
+                    <td>{{ entry.StatusName }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 11" class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Tax Status Name</th>
+                </tr>
+                <tr *ngFor="let entry of tables.ordersTaxStatus">
+                    <td>{{ entry.ID }}</td>
+                    <td>{{ entry.TaxStatusName }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 12" class="table table-striped">
+                <tr>
+                    <th>Privilege ID</th>
+                    <th>Privilege Name</th>
+                </tr>
+                <tr *ngFor="let entry of tables.privileges">
+                    <td>{{ entry.PrivilegeID }}</td>
+                    <td>{{ entry.PrivilegeName }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 13" class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Supplier IDs</th>
+                    <th>Product Code</th>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                </tr>
+                <tr *ngFor="let entry of tables.products">
+                    <td>{{ entry.ID }}</td>
+                    <td>{{ entry.SupplierIDs }}</td>
+                    <td>{{ entry.ProductCode }}</td>
+                    <td>{{ entry.ProductName }}</td>
+                    <td>{{ entry.Category }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 14" class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Purchase Order ID</th>
+                    <th>Product ID</th>
+                    <th>Quantity</th>
+                    <th>Unit Cost</th>
+                    <th>Date Received</th>
+                    <th>Inventory ID</th>
+                </tr>
+                <tr *ngFor="let entry of tables.purchaseOrderDetails">
+                    <td>{{ entry.ID }}</td>
+                    <td>{{ entry.PurchaseOrderID }}</td>
+                    <td>{{ entry.ProductID }}</td>
+                    <td>{{ entry.Quantity }}</td>
+                    <td>{{ entry.UnitCost }}</td>
+                    <td>{{ entry.DateReceived }}</td>
+                    <td>{{ entry.InventoryID }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 15" class="table table-striped">
+                <tr>
+                    <th>Status ID</th>
+                    <th>Status</th>
+                </tr>
+                <tr *ngFor="let entry of tables.purchaseOrderStatus">
+                    <td>{{ entry.StatusID }}</td>
+                    <td>{{ entry.Status }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 16" class="table table-striped">
+                <tr>
+                    <th>Supplier ID</th>
+                    <th>Purchase Order ID</th>
+                    <th>Created By</th>
+                    <th>Submitted Date</th>
+                    <th>Creation Date</th>
+                    <th>Status ID</th>
+                    <th>Submitted By</th>
+                </tr>
+                <tr *ngFor="let entry of tables.purchaseOrders">
+                    <td>{{ entry.SupplierID }}</td>
+                    <td>{{ entry.PurchaseOrderID }}</td>
+                    <td>{{ entry.CreatedBy }}</td>
+                    <td>{{ entry.SubmittedDate }}</td>
+                    <td>{{ entry.CreationDate }}</td>
+                    <td>{{ entry.StatusID }}</td>
+                    <td>{{ entry.SubmittedBy }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 17" class="table table-striped">
+                <tr>
+                    <th>Group By</th>
+                    <th>Display</th>
+                    <th>Title</th>
+                    <th>Filter Row Source</th>
+                </tr>
+                <tr *ngFor="let entry of tables.salesReports">
+                    <td>{{ entry.GroupBy }}</td>
+                    <td>{{ entry.Display }}</td>
+                    <td>{{ entry.Title }}</td>
+                    <td>{{ entry.FilterRowSource }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 18" class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Company</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>ZIP/Postal Code</th>
+                    <th>Country/Region</th>
+                </tr>
+                <tr *ngFor="let entry of tables.shippers">
+                    <td>{{ entry.ID }}</td>
+                    <td>{{ entry.Company }}</td>
+                    <td>{{ entry.Address }}</td>
+                    <td>{{ entry.City }}</td>
+                    <td>{{ entry.ZIPPostalCode }}</td>
+                    <td>{{ entry.CountryRegion }}</td>
+                </tr>
+            </table>
+            <table *ngIf="tableTabID == 19" class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Company</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Job Title</th>
+                </tr>
+                <tr *ngFor="let entry of tables.suppliers">
+                    <td>{{ entry.ID }}</td>
+                    <td>{{ entry.Company }}</td>
+                    <td>{{ entry.LastName }}</td>
+                    <td>{{ entry.FirstName }}</td>
+                    <td>{{ entry.JobTitle }}</td>
+                </tr>
+            </table>
         </div>
-        <div class="col-md-9">
-            <http></http>
-            <p id="tables"></p>
+    </div>
+    <div id="tableTabs" class="tab active" *ngIf="tabID == 2">
+        <div class="col-md-12 tableDiv">
+            <table *ngIf="queryTabID == 1" class="table table-striped">
+                <tr>
+                    <th>FileAs</th>
+                    <th>ContactName</th>
+                    <th>ID</th>
+                    <th>Company</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+                <tr *ngFor="let entry of tables.customersExtended">
+                    <td>{{ entry.FileAs }}</td>
+                    <td>{{ entry.ContactName }}</td>
+                    <td>{{ entry.ID }}</td>
+                    <td>{{ entry.Company }}</td>
+                    <td>{{ entry.FirstName }}</td>
+                    <td>{{ entry.LastName }}</td>
+                </tr>
+            </table>
+            <table *ngIf="queryTabID == 2" class="table table-striped">
+                <tr>
+                    <th>Order ID</th>
+                    <th>Employee ID</th>
+                    <th>Customer ID</th>
+                    <th>Order Date</th>
+                    <th>Shipped Date</th>
+                    <th>Shipping Fee</th>
+                    <th>Ship Name</th>
+                    <th>Ship Address</th>
+                    <th>Paid Date</th>
+                </tr>
+                <tr *ngFor="let entry of tables.orderSummary">
+                    <td>{{ entry.OrderID }}</td>
+                    <td>{{ entry.EmployeeID }}</td>
+                    <td>{{ entry.CustomerID }}</td>
+                    <td>{{ entry.OrderDate }}</td>
+                    <td>{{ entry.ShippedDate }}</td>
+                    <td>{{ entry.ShippingFee }}</td>
+                    <td>{{ entry.ShipName }}</td>
+                    <td>{{ entry.ShipAddress }}</td>
+                    <td>{{ entry.PaidDate }}</td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>

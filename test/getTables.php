@@ -1,5 +1,7 @@
 <?php
 
+	header('Access-Control-Allow-Origin: *');  
+
     $conn = new mysqli("chloewuwebcom.ipagemysql.com", "leong1995", "dbCW2017", "northwinds");
 
 	if($conn->connect_error)

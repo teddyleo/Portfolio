@@ -7,9 +7,12 @@
 .navbar-brand {
     font-size: 22px;
     color: white;
-    cursor: default;
 }
 
 .navbar-nav {
     font-size: 18px;
+}
+
+.navbar-header {
+    cursor: pointer;
 }

@@ -181,8 +181,6 @@ var mazegen = function(p) {
 
         }
 
-        p.frameRate(25);
-
         current = undefined;
         target = grid[rows * cols - 1];
         found = false;
@@ -192,7 +190,10 @@ var mazegen = function(p) {
 
     p.draw = function() {
 
+        if (currentp5 != ".mazegen") return;
+
         p.background(0);
+
         for (var i = 0; i < grid.length; i++) {
 
             grid[i].show();
@@ -223,6 +224,7 @@ var mazegen = function(p) {
             current.highlight();
 
             var next = current.checkNeighbors();
+
             if (next) {
 
                 next.visited = true;
@@ -492,7 +494,10 @@ var gameoflife = function(p) {
 
     p.draw = function() {
 
+        if (currentp5 != ".gameoflife") return;
+
         p.background(0);
+
         for (var i = 0; i < grid.length; i++) {
 
             grid[i].show();
@@ -500,10 +505,12 @@ var gameoflife = function(p) {
         }
 
         if (!started) {
+
             p.textSize(26);
             p.fill(255);
             p.text("Click to begin!", 30, p.height - 30);
             return;
+
         }
 
         calculateNext(grid);
@@ -647,3 +654,376 @@ var gameoflife = function(p) {
 
 }
 var myp5 = new p5(gameoflife, 'gameoflife');
+
+// Sketch Five
+var treegen = function(p) {
+
+    // var tree;
+    // var max_dist = 100;
+    // var min_dist = 10;
+    // var started = false;
+
+    // p.setup = function() {
+
+    //     p.createCanvas(400, 400);
+    //     tree = new Tree();
+
+    // }
+
+    // p.draw = function() {
+
+    //     if (currentp5 != ".treegen") return;
+
+    //     p.background(51);
+    //     tree.show();
+
+    //     if (!started) {
+
+    //         p.textSize(26);
+    //         p.fill(255);
+    //         p.text("Click to begin!", 30, p.height - 30);
+    //         return;
+
+    //     }
+
+    //     if (!tree.leaves.length) {
+
+    //         p.textSize(26);
+    //         p.fill(255);
+    //         p.text("Click to restart!", 30, p.height - 30);
+    //         return;
+
+    //     }
+
+    //     tree.grow();
+
+    // }
+
+    // p.mousePressed = function() {
+
+    //     if (p.mouseX > 0 && p.mouseX < p.width &&
+    //         p.mouseY > 0 && p.mouseY < p.height) {
+
+    //         if (!started) {
+
+    //             started = true;
+    //             return;
+
+    //         }
+
+    //         tree = new Tree();
+    //         return;
+
+    //     }
+
+    // }
+
+    // function Tree() {
+
+    //     this.leaves = [];
+    //     this.branches = [];
+
+    //     for (var i = 0; i < 1500; i++) {
+
+    //         this.leaves.push(new Leaf());
+
+    //     }
+
+    //     var pos = p.createVector(p.width / 2, p.height);
+    //     var dir = p.createVector(0, -1);
+    //     var root = new Branch(null, pos, dir);
+    //     this.branches.push(root);
+    //     var current = root;
+    //     var found = false;
+
+    //     while (!found) {
+
+    //         for (var i = 0; i < this.leaves.length; i++) {
+
+    //             var d = p5.Vector.dist(current.pos, this.leaves[i].pos);
+
+    //             if (d < max_dist) {
+
+    //                 found = true;
+
+    //             }
+
+    //         }
+
+    //         if (!found) {
+
+    //             var branch = current.next();
+    //             current = branch;
+    //             this.branches.push(current);
+
+    //         }
+
+    //     }
+
+    //     this.grow = function() {
+
+    //         for (var i = 0; i < this.leaves.length; i++) {
+
+    //             var leaf = this.leaves[i];
+    //             var closestBranch = null;
+    //             var record = 100000;
+
+    //             for (var j = 0; j < this.branches.length; j++) {
+
+    //                 var branch = this.branches[j];
+    //                 var d = p5.Vector.dist(leaf.pos, branch.pos);
+    //                 if (d < min_dist) {
+    //                     leaf.reached = true;
+    //                     closestBranch = null;
+    //                     break;
+    //                 } else if (d > max_dist) {
+
+    //                 } else if (closestBranch == null || d < record) {
+    //                     closestBranch = branch;
+    //                     record = d;
+    //                 }
+
+    //             }
+
+    //             if (closestBranch != null) {
+
+    //                 var newDir = p5.Vector.sub(leaf.pos, closestBranch.pos);
+    //                 newDir.normalize();
+    //                 closestBranch.dir.add(newDir);
+    //                 closestBranch.count++;
+
+    //             }
+    //         }
+
+    //         for (var i = this.leaves.length - 1; i >= 0; i--) {
+
+    //             if (this.leaves[i].reached) {
+    //                 this.leaves.splice(i, 1);
+    //             }
+
+    //         }
+
+    //         for (var i = this.branches.length - 1; i >= 0; i--) {
+
+    //             var branch = this.branches[i];
+
+    //             if (branch.count > 0) {
+
+    //                 branch.dir.div(branch.count + 1);
+    //                 this.branches.push(branch.next());
+
+    //             }
+
+    //             branch.reset();
+
+    //         }
+    //     }
+
+    //     this.show = function() {
+
+    //         for (var i = 0; i < this.leaves.length; i++) {
+
+    //             this.leaves[i].show();
+
+    //         }
+
+    //         for (var i = 0; i < this.branches.length; i++) {
+
+    //             this.branches[i].show();
+
+    //         }
+
+    //     }
+
+    // }
+
+    // function Branch(parent, pos, dir) {
+
+    //     this.pos = pos;
+    //     this.parent = parent;
+    //     this.dir = dir;
+    //     this.origDir = this.dir.copy();
+    //     this.count = 0;
+    //     this.len = 5;
+
+    //     this.reset = function() {
+
+    //         this.dir = this.origDir.copy();
+    //         this.count = 0;
+
+    //     }
+
+
+    //     this.next = function() {
+
+    //         var nextDir = p5.Vector.mult(this.dir, this.len);
+    //         var nextPos = p5.Vector.add(this.pos, nextDir);
+    //         var nextBranch = new Branch(this, nextPos, this.dir.copy());
+    //         return nextBranch;
+
+    //     }
+
+    //     this.show = function() {
+
+    //         if (parent != null) {
+
+    //             p.stroke(255);
+    //             p.line(this.pos.x, this.pos.y, this.parent.pos.x, this.parent.pos.y);
+
+    //         }
+
+    //     }
+    // }
+
+    // function Leaf() {
+
+    //     this.pos = p.createVector(p.random(p.width), p.random(p.height - 100));
+    //     this.reached = false;
+
+    //     this.show = function() {
+
+    //         p.fill(255);
+    //         p.noStroke();
+    //         p.ellipse(this.pos.x, this.pos.y, 4, 4);
+
+    //     }
+
+    // }
+
+    var angle;
+    var axiom = "F";
+    var sentence = axiom;
+    var len = 100;
+    var steps = 0;
+    var started = false;
+
+    var rules = [];
+    rules[0] = {
+        a: "F",
+        b: "FF+[+F-F-F]-[-F+F+F]"
+    }
+
+    p.mousePressed = function() {
+
+        if (p.mouseX > 0 && p.mouseX < p.width &&
+            p.mouseY > 0 && p.mouseY < p.height) {
+
+            if (!started) started = true;
+            steps++;
+
+            if (steps == 6) {
+
+                len = 100;
+                sentence = "F";
+                steps = 0;
+                turtle();
+                return;
+
+            }
+
+            generate();
+            return;
+
+        }
+
+    }
+
+    function generate() {
+
+        len *= 0.5;
+        var nextSentence = "";
+
+        for (var i = 0; i < sentence.length; i++) {
+
+            var current = sentence.charAt(i);
+            var found = false;
+
+            for (var j = 0; j < rules.length; j++) {
+
+                if (current == rules[j].a) {
+
+                    found = true;
+                    nextSentence += rules[j].b;
+                    break;
+
+                }
+
+            }
+
+            if (!found) {
+
+                nextSentence += current;
+
+            }
+        }
+
+        sentence = nextSentence;
+        turtle();
+
+    }
+
+    function turtle() {
+
+        p.background(51);
+
+        if (!started) {
+
+            p.textSize(26);
+            p.fill(255);
+            p.text("Click to begin!", 30, p.height - 30);
+
+        } else {
+
+            p.textSize(26);
+            p.fill(255);
+            p.text("Click!", 30, p.height - 30);
+
+        }
+
+        p.resetMatrix();
+        p.translate(p.width / 2, p.height);
+        p.stroke(255, 100);
+
+        for (var i = 0; i < sentence.length; i++) {
+
+            var current = sentence.charAt(i);
+
+            if (current == "F") {
+
+                p.line(0, 0, 0, -len);
+                p.translate(0, -len);
+
+            } else if (current == "+") {
+
+                p.rotate(angle);
+
+            } else if (current == "-") {
+
+                p.rotate(-angle)
+
+            } else if (current == "[") {
+
+                p.push();
+
+            } else if (current == "]") {
+
+                p.pop();
+
+            }
+
+        }
+
+    }
+
+    p.setup = function() {
+
+        p.createCanvas(400, 400);
+
+        angle = p.radians(25);
+        p.background(51);
+        turtle();
+
+    }
+
+}
+var myp5 = new p5(treegen, 'treegen');

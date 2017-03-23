@@ -9,3 +9,9 @@
 .tab.active {
     display: block;
 }
+
+.tableDiv {
+    max-width: 100%;
+    max-height: 800px;
+    overflow: auto;
+}

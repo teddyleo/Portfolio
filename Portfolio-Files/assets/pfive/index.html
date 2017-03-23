@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+    <base href="/">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Leo Ng - Web Developer Portfolio</title>
+
+    <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/pfive/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js'></script>
+    <script type="text/javascript" src="./assets/pfive/main.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/js/p5.min.js"></script>
+    <script type="text/javascript" src="./assets/js/sketch.js" defer></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <a href="/">
+                <div class="navbar-header">
+                    <span class="navbar-brand">Leo Ng</span>
+                    <img class="logo" src="../assets/images/logo">
+                </div>
+            </a>
+            <ul class="nav navbar-nav">
+                <li class="work"><a href="/">Work</a></li>
+                <li class="about"><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content cards">
+
+        <div class="container">
+            <div class="row buttons">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-1">
+                    <button class="btn btn-block btn-lg mazegenbutton btn-primary" onclick="toggle(1)">1</button>
+                </div>
+                <div class="col-sm-1">
+                    <button class="btn btn-block btn-lg gameoflifebutton" onclick="toggle(2)">2</button>
+                </div>
+                <div class="col-sm-1">
+                    <button class="btn btn-block btn-lg treegenbutton" onclick="toggle(3)">3</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="p5container col-sm-6">
+                    <div class="p5item well mazegen">
+                        <h1>Maze Generator</h1>
+                        <div class="item" id="mazegen"></div>
+                        <p>This implementation uses a depth-first search algorithm and a recursive backtracker to generate the maze. It then does a depth-first search on the generated maze to complete it.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="p5container col-sm-6">
+                    <div class="p5item well gameoflife">
+                        <h1>Game of Life</h1>
+                        <div class="item" id="gameoflife"></div>
+                        <p>This is an implementation of Conway's Game of Life, where a two-dimensuional grid consists of cells that can be either alive or dead. Click the canvas to generate a random set of alive/dead cells.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="p5container col-sm-6">
+                    <div class="p5item well treegen">
+                        <h1>Tree Generation</h1>
+                        <div class="item" id="treegen"></div>
+                        <p>This sketch uses a L-System to generate a collection of production rules in the form of a string, which is used to create the tree-like structure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">@2017</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

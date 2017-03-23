@@ -5,3 +5,7 @@ p {
 .item {
     cursor: pointer !important;
 }
+
+.treegen {
+    display: none;
+}

@@ -9,8 +9,8 @@ import { AboutComponent } from './about/about.component';
 import { WorkComponent } from './work/work.component';
 import { PfiveComponent } from './pfive/pfive.component';
 import { NorthwindsComponent } from './northwinds/northwinds.component';
-import { HTTPComponent } from './northwinds/http.component';
 import { HTTPService } from './northwinds/http.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +18,8 @@ import { HTTPService } from './northwinds/http.service';
     AboutComponent,
     WorkComponent,
     PfiveComponent,
-    NorthwindsComponent, 
-    HTTPComponent
+    NorthwindsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -33,11 +33,14 @@ import { HTTPService } from './northwinds/http.service';
         path: 'about',
         component: AboutComponent
       }, {
-        path: 'pfive',
-        component: PfiveComponent
-      }, {
         path: 'northwinds',
         component: NorthwindsComponent
+      }, {
+        path: '404',
+        component: NotFoundComponent
+      }, {
+        path: '**',
+        redirectTo: '/404'
       }
     ])
   ],

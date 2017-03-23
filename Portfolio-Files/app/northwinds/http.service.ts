@@ -8,7 +8,7 @@ export class HTTPService {
     constructor(private _http: Http) {}
 
     getTable() {
-        return this._http.get("https://chloewuweb.com/test/getTables.php").map(res => res.json());
+        return this._http.get("https://chloewuweb.com/php/getTables.php").map(res => res.json());
     }
 
 }

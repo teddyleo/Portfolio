@@ -1,0 +1,1441 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>UQ Solar</title>
+    <meta name="description" content="UQ Solar">
+    <meta name="author" content="SitePoint">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/acctmgmt.css">
+    <link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,500italic,700,900,100italic' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://drupal.uq.edu.au/themes/uqbase/favicon.ico" />
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/example-graphs.js"></script>
+    <script type="text/javascript" src="js/ng_responsive_tables.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('table.responsive').ngResponsiveTables({
+                smallPaddingCharNo: 5,
+                mediumPaddingCharNo: 10,
+                largePaddingCharNo: 15
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header white no_list">
+            <div id="top" class="site-header row">
+                <div class="site-header__global-menu">
+                    <div class="global-menu hide-for-small-only">
+                        <ul class="global-menu__list">
+                            <li class="global-menu__item"><a href="http://www.uq.edu.au/" accesskey="1" class="global-menu__link">UQ Home</a></li>
+                            <li class="global-menu__item"><a href="http://www.uq.edu.au/contacts/" accesskey="2" class="global-menu__link">Contacts</a></li>
+                            <li class="global-menu__item"><a href="http://www.uq.edu.au/study/" accesskey="3" class="global-menu__link">Study</a></li>
+                            <li class="global-menu__item"><a href="http://www.uq.edu.au/maps/" accesskey="4" class="global-menu__link">Maps</a></li>
+                            <li class="global-menu__item"><a href="http://www.uq.edu.au/news/" accesskey="5" class="global-menu__link">News</a></li>
+                            <li class="global-menu__item"><a href="http://www.uq.edu.au/events/" accesskey="6" class="global-menu__link">Events</a></li>
+                            <li class="global-menu__item"><a href="http://www.library.uq.edu.au/" accesskey="7" class="global-menu__link">Library</a></li>
+                            <li class="global-menu__item"><a href="http://my.uq.edu.au/" accesskey="8" class="global-menu__link">my.UQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-header__content">
+                    <div class="columns medium-12 large-12 small-12 header-mobile">
+                        <div>
+                            <a href="http://www.uq.edu.au/" title="UQ Homepage" id="uq-logo"><img class="logo" src="images/uoq_logo.gif" alt="University of Queensland" height="50" width="182"></a>
+                        </div>
+                        <a id="uqsolar" class="site-title__link" rel="home" title="UQ Solar" href="http://solar-energy.uq.edu.au/">UQ Solar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div="content">
+            <div id="middle" class="row collapse" data-equalizer data-equalize-on="medium">
+                <div class="medium-3 columns menu-col">
+
+                    <div class="expand menu-button-container row">
+                        <div class="columns large-2">
+                            <button class="c-hamburger c-hamburger--htx" id="tabbed-menu-button">
+							  <span>toggle menu</span>
+							</button>
+                        </div>
+                    </div>
+                    <ul class="tabs vertical" id="tabbed-menu" data-tabs data-equalizer-watch>
+                        <li class="tabs-title tabs-title-new is-active" onclick="openTab(event, 'panel0v')"><a href="#panel1v" class="leave-a first-leave" aria-selected="true">Home</a></li>
+                        <li class="tabs-title" onclick="openTab(event, 'panel10v')"><a href="#panel10v" class="leave-a leave">Manage User <br>Accounts</a></li>
+                        <li class="tabs-title" onclick="openTab(event, 'panel16v')"><a href="#panel16v" class="leave-a leave">Change Log</a></li>
+                        <li class="tabs-title" onclick="openTab(event, 'panel1v')"><a href="#panel1v" class="leave-a leave">System Settings</a></li>
+                        <div class="tabs-panel vertical submenu " id="submenu1">
+                            <ul class="tabs vertical" id="example-vert-tabs" data-tabs>
+                                <li class="tabs-title-i tabs-title is-active" onclick="openInnerTab(event, 'ipanel1v')"><a href="#ipanel1v" class="leave-a first-leave" aria-selected="true">General</a></li>
+                                <li class="tabs-title-i tabs-title" onclick="openInnerTab(event, 'ipanel2v')"><a href="#ipanel2v" class="leave-a leave">Reporting Times</a></li>
+                                <li class="tabs-title-i tabs-title" onclick="openInnerTab(event, 'ipanel3v')"><a href="#ipanel3v" class="leave-a leave">Refresh</a></li>
+                                <li class="tabs-title-i tabs-title" onclick="openInnerTab(event, 'ipanel4v')"><a href="#ipanel4v" class="leave-a leave">Directories</a></li>
+                            </ul>
+                        </div>
+                        <li class="tabs-title" onclick="openTab(event, 'panel13v')"><a href="#panel13v" class="leave-a leave">Storage Systems</a></li>
+                        <li class="tabs-title" onclick="openTab(event, 'panel2v')"><a href="#panel2v" class="leave-a leave">Locations</a>
+                            <li class="tabs-title" onClick="openTab(event, 'panel3v')"><a href="#panel3v" class="leave-a leave">AC Boards</a></li>
+                            <li class="tabs-title" onClick="openTab(event, 'panel18v')"><a href="#panel18v" class="leave-a leave">Non PV</a></li>
+                            <li class="tabs-title" onclick="openTab(event, 'panel17v')"><a href="#panel17v" class="leave-a leave">Export Raw Meter Data</a></li>
+                            <li class="tabs-title" onclick="openTab(event, 'panel4v')"><a href="#panel4v" class="leave-a leave">Carbon Constant</a></li>
+                            <li class="tabs-title" onClick="openTab(event, 'panel5v')"><a href="#panel5v" class="leave-a leave">Energy Price</a></li>
+                            <li class="tabs-title" onclick="openTab(event, 'panel6v')"><a href="#panel6v" class="leave-a leave">Reports</a></li>
+                            <li class="tabs-title" onclick="openTab(event, 'panel8v')"><a href="#panel8v" class="leave-a leave">Calculate</a></li>
+                            <li class="tabs-title" onclick="openTab(event, 'panel12v')"><a href="#panel12v" class="leave-a leave">Sunrise/Sunset Times</a></li>
+                    </ul>
+                </div>
+                <div class="medium-9 columns">
+                    <div class="tabs-panel is-active" id="panel0v" data-equalizer-watch>
+                        <div class="row">
+                            <div class="columns large-4">
+                                <h3>Welcome Admin</h3>
+                            </div>
+                            <div class="columns large-6">
+                                <br/>
+                                <p><strong>Last logged in:</strong>16:00 09/05/2016</p>
+                            </div>
+                            <div class="columns large-2" id="floatdiv">
+                                <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                            </div>
+                        </div>
+                        <br>
+                        <row>
+                            <div class="columns large-12">
+                                <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                            </div>
+                        </row>
+                        <row>
+                            <div class="columns large-6">
+                                <div id="container2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                            </div>
+                            <div class="columns large-6">
+                                <div id="container3" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                            </div>
+                        </row>
+                    </div>
+                    <div class="tabs-panel " id="panel1v" data-equalizer-watch>
+                        <div id="floatdiv">
+                            <h3>System Settings</h3>
+                            <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                        </div>
+                        <div id="clear"></div>
+
+                        <div class="tabs-panel-i" id="ipanel1v">
+                            <table class="table-stack" border="1" style="width:100%">
+                                <tr>
+                                    <th class="white" bgcolor="#49075e">Description</th>
+                                    <th class="white" bgcolor="#49075e">Value</th>
+
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <p><strong>Currently assigned URL</strong></p>
+                                    </td>
+                                    <td><input type="text" value="http://deco3800-wattsup.uqcloud.net" readonly></td>
+
+
+                                </tr>
+
+
+                                <tr>
+                                    <td>
+                                        <p><strong>Administration Login Name</strong></p>
+                                    </td>
+                                    <td><input type="text" name="firstname"></td>
+
+
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <p><strong>Password Lifetime</strong></p>
+                                    </td>
+                                    <td><input type="text" name="firstname"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><strong>Global Info URL</strong></p>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="url" value="http://www.uq.edu.au/solarenergy/">
+                                    </td>
+                                </tr>
+                            </table>
+                            <button class="button" id="button-float-right"><i class="fa fa-hdd-o" aria-hidden="true"></i> Save Changes</button>
+                        </div>
+
+                        <div class="tabs-panel-i" id="ipanel2v">
+                            <table class="table-stack" border="1" style="width:100%">
+                                <tr>
+                                    <th class="white" bgcolor="#49075e">Description</th>
+                                    <th class="white" bgcolor="#49075e">Value</th>
+                                </tr>
+
+                                <tr>
+                                    <tr>
+                                        <td>
+                                            <p><strong>Reporting window start, each day. 24-hour time (HH:MM)</strong></p>
+                                        </td>
+                                        <td><input type="text" name="firstname"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><strong>Reporting window end, each day. 24-hour time (HH:MM)</strong></p>
+                                        </td>
+                                        <td><input type="text" name="url"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><strong>Start time each day to accept MEANINGFUL data.</strong></p>
+                                        </td>
+                                        <td><input type="text" name="url"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><strong>Closing time each day to accept MEANINGFUL data.</strong></p>
+                                        </td>
+                                        <td><input type="text" name="url"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><strong>The year the system will start gathering data. Eg year's 1st january</strong></p>
+                                        </td>
+                                        <td><input type="text" name="url"></td>
+                                    </tr>
+                            </table>
+                            <button class="button" id="button-float-right"><i class="fa fa-hdd-o" aria-hidden="true"></i> Save Changes</button>
+                        </div>
+
+                        <div class="tabs-panel-i" id="ipanel3v">
+                            <table class="table-stack" border="1" style="width:100%">
+                                <tr>
+                                    <th class="white" bgcolor="#49075e">Description</th>
+                                    <th class="white" bgcolor="#49075e">Value</th>
+                                </tr>
+
+                                <tr>
+                                    <tr>
+                                        <td>
+                                            <p><strong>Ticker time-out given in minutes</strong></p>
+                                        </td>
+                                        <td><input type="text" name="url"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><strong>Auto logout of users, in minutes. Default=15</strong></p>
+                                        </td>
+                                        <td><input type="text" name="url"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><strong>Graph refresh interval, in minutes. Default=5</strong></p>
+                                        </td>
+                                        <td><input type="text" name="url"></td>
+                                    </tr>
+                            </table>
+                            <button class="button" id="button-float-right"><i class="fa fa-hdd-o" aria-hidden="true"></i> Save Changes</button>
+                        </div>
+
+
+                        <div class="tabs-panel-i" id="ipanel4v">
+                            <table class="table-stack" border="1" style="width:100%">
+                                <tr>
+                                    <th class="white" bgcolor="#49075e">Description</th>
+                                    <th class="white" bgcolor="#49075e">Value</th>
+                                </tr>
+
+                                <tr>
+                                    <tr>
+                                        <td>
+                                            <p><strong>The directory where the data files reside. This directory must be readable.</strong></p>
+                                        </td>
+
+                                        <td><input type="text" name="url"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><strong>The directory where SINGLE data files reside. This directory must be readable.</strong></p>
+                                        </td>
+
+                                        <td><input type="text" name="url"></td>
+                                    </tr>
+                            </table>
+                            <button class="button" id="button-float-right"><i class="fa fa-hdd-o" aria-hidden="true"></i> Save Changes</button>
+                        </div>
+                    </div>
+
+                    <div class="tabs-panel" id="panel2v" data-equalizer-watch>
+
+                        <div id="floatdiv">
+                            <h3>Locations</h3>
+                            <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                        </div>
+                        <div id="clear"></div>
+                        <p>Configure the UQ PV array locations.</p>
+
+                        <table id="table-mobile" border="1" style="width:100%">
+                            <tr>
+                                <th class="white" bgcolor="#49075e">#</th>
+                                <th class="white" bgcolor="#49075e">Location</th>
+                                <th class="white" bgcolor="#49075e">URL to Details</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <input type="text" value="All sites combined">
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <input type="text" value="St Lucia Campus">
+                                </td>
+                                <td><input type="text" value="http://www.uq.com"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <input type="text" value="Gatton PV Pilot Plant (EIF)">
+                                </td>
+                                <td><input type="text" value="http://www.uq.com"></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    <input type="text" value="Gatton Campus">
+                                </td>
+                                <td><input type="text" value="http://www.uq.com"></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>
+                                    <input type="text" value="Heron Island">
+                                </td>
+                                <td><input type="text" value="http://www.uq.com"></td>
+                            </tr>
+                        </table>
+                        <button class="button" id="button-float-left"><i class="fa fa-hdd-o" aria-hidden="true"></i> Save Changes</button>
+                        <button class="button" id="button-float-right"><i class="fa fa-plus-square" aria-hidden="true"></i> Add New Array</button>
+                    </div>
+                    <div class="tabs-panel" id="panel3v" data-equalizer-watch>
+                        <div id="acboards">
+                            <div id="floatdiv">
+                                <h3>AC Boards</h3>
+
+                                <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                            </div>
+                            <div id="clear"></div>
+                            <span>Both the 'Title' and 'Identifier' are required. Any entry without an identifier will be dropped.</span>
+                            <div id="clear"></div>
+                            <h4>Arrays</h4>
+                            <div id="button-float-left">
+                                <div id="arraymenu">
+                                    <ul>
+                                        <li><a class="button"><i class="fa fa-list" aria-hidden="true"></i> 1-5</a></li>
+                                        <li><a class="button"><i class="fa fa-list" aria-hidden="true"></i> 6-10</a></li>
+                                        <li><a class="button"><i class="fa fa-list" aria-hidden="true"></i> 11-15</a></li>
+                                        <li><a class="button"><i class="fa fa-list" aria-hidden="true"></i> 16-20</a></li>
+                                        <li><a class="button"><i class="fa fa-list" aria-hidden="true"></i> 21-25</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="button" id="float-right" onclick="openTab(event, 'acboardsb')"><div id="newarray"><i class="fa fa-plus-square" aria-hidden="true"></i> Add New Array</div></button>
+                            <div id="clear"></div>
+
+                            <div id="arraytable">
+                                <table border="1" style="width:100%">
+                                    <tr>
+                                        <th class="white" bgcolor="#49075e">No. </th>
+                                        <th class="white" bgcolor="#49075e">Location</th>
+                                        <th class="white" bgcolor="#49075e">Title</th>
+                                        <th class="white" bgcolor="#49075e">Identifier</th>
+                                        <th class="white" bgcolor="#49075e">Capacity (kWp)</th>
+                                        <th>
+                                            <div style="float:right" class="button expand" onClick="openTab(event, 'panel30v'); openview()"><a id="upload">Full View <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><select disabled>
+													<option> - select one - </option>
+													<option selected="selected">All sites combined</option>
+													<option>St Lucia Campus</option>
+													<option>Gatton Campus</option>
+													<option>Heron Island</option>
+													<option>Herston Campus</option>
+													<option>Gatton PV Pilot Plant (EIF)</option>
+												</select></td>
+                                        <td><input name="title" value="All arrays combined"></td>
+                                        <td><input id="identifier" readonly></td>
+                                        <td><input id="capacity" readonly></td>
+                                        <td><button class="button expand" onclick="openTab(event, 'acboardsa')"><div id="upload"><i class="fa fa-upload" aria-hidden="true"></i> Upload Data File</div></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><select>
+													<option> - select one - </option>
+													<option>All sites combined</option>
+													<option selected="selected">St Lucia Campus</option>
+													<option>Gatton Campus</option>
+													<option>Heron Island</option>
+													<option>Herston Campus</option>
+													<option>Gatton PV Pilot Plant (EIF)</option>
+												</select></td>
+                                        <td><input name="title" value="UQ Centre, St Lucia"></td>
+                                        <td><input id="identifier" value="027A"></td>
+                                        <td><input id="capacity" value="433"></td>
+                                        <td><button class="button expand" onclick="openTab(event, 'acboardsa')"><div id="upload"><i class="fa fa-upload" aria-hidden="true"></i> Upload Data File</div></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><select>
+													<option selected="selected"> - select one - </option>
+													<option>All sites combined</option>
+													<option>St Lucia Campus</option>
+													<option>Gatton Campus</option>
+													<option>Heron Island</option>
+													<option>Herston Campus</option>
+													<option>Gatton PV Pilot Plant (EIF)</option>
+												</select></td>
+                                        <td><input name="title" value="Concentrating Array"></td>
+                                        <td><input id="identifier" value="SOLF"></td>
+                                        <td><input id="capacity" value="8"></td>
+                                        <td><button class="button expand" onclick="openTab(event, 'acboardsa')"><div id="upload"><i class="fa fa-upload" aria-hidden="true"></i> Upload Data File</div></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><select>
+													<option> - select one - </option>
+													<option>All sites combined</option>
+													<option selected="selected">St Lucia Campus</option>
+													<option>Gatton Campus</option>
+													<option>Heron Island</option>
+													<option>Herston Campus</option>
+													<option>Gatton PV Pilot Plant (EIF)</option>
+												</select></td>
+                                        <td><input name="title" value="Multi Level Car Park #1"></td>
+                                        <td><input id="identifier" value="98A"></td>
+                                        <td><input id="capacity" value="339"></td>
+                                        <td><button class="button expand" onclick="openTab(event, 'acboardsa')"><div id="upload"><i class="fa fa-upload" aria-hidden="true"></i> Upload Data File</div></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td><select>
+													<option> - select one - </option>
+													<option>All sites combined</option>
+													<option selected="selected">St Lucia Campus</option>
+													<option>Gatton Campus</option>
+													<option>Heron Island</option>
+													<option>Herston Campus</option>
+													<option>Gatton PV Pilot Plant (EIF)</option>
+												</select></td>
+                                        <td><input name="title" value="Multi Level Car Park #2"></td>
+                                        <td><input id="identifier" value="98B"></td>
+                                        <td><input id="capacity" value="339"></td>
+                                        <td><button class="button expand" onclick="openTab(event, 'acboardsa')"><div id="upload"><i class="fa fa-upload" aria-hidden="true"></i> Upload Data File</div></button></td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                            <button class="button"><i class="fa fa-hdd-o" aria-hidden="true"></i> Save Changes</button>
+                        </div>
+                    </div>
+                    <div class="tabs-panel" id="acboardsa" data-equalizer-watch>
+                        <div id="floats">
+                            <h3>Import Array Data</h3>
+                            <button class="button" onclick="openTab(event, 'panel3v')"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back<button>
+
+								</div>
+								<div id="clear"></div>
+								<form id="dataimport">
+									<h4>Choose Array</h4>
+									<select required>
+										<option> - select one - </option>
+										<option selected="selected">1. St Lucia Campus - 027A</option>
+										<option>2. St Lucia Campus - SOLF</option>
+										<option>3. Heron Island - 703</option>
+										<option>4. St Lucia Campus - 98A</option>
+										<option>5. St Lucia Campus - 98B</option>
+										<option>6. Gatton Campus - 8167</option>
+										<option>7. Herston Campus - 883</option>
+										<option>8. Gatton PV Pilot Plant(EIF) - 8300_DAT</option>
+									</select>
+									<h4>Upload File</h4>
+									<p>The uploaded file must be in a csv format. The data has to be in the following format:</p>
+									<ul>
+										<li>Date: MM/DD/YYY</li>
+										<li>Time: HH:MM:SS</li>
+										<li>Instantaneous Energy: Integer</li>
+										<li>Cumulative Energy: Integer</li>
+										<li>Energy Consumed: Integer</li>
+									</ul>
+									<input type="file" name="file" id="file" required>
+									<label for="file">Choose a File</label><br>
+									<button type="submit" class="button" onclick=""><i class="fa fa-upload" aria-hidden="true"></i> Upload File</button>
+                            </form>
+                        </div>
+                        <div class="tabs-panel" id="acboardsb" data-equalizer-watch>
+                            <div id="floats">
+                                <h3>Add New Array</h3>
+                                <button class="button" onclick="openTab(event, 'panel3v')"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back<button>
+								</div>
+								<div id="clear"></div>
+								<form>
+									<table class = "table-stack" border="1"><tr>
+										<td>
+											<label>Location*:</label>
+											<select required>
+												<option> - select one - </option>
+												<option selected="selected">1. St Lucia Campus</option>
+												<option>2. Gatton Campus</option>
+												<option>3. Heron Island</option>
+												<option>4. Herston Campus</option>
+												<option>5. Gatton Campus</option>
+												<option>6. Gatton PV Pilot Plant (EIF)</option>
+											</select>
+											<label>Data File Method*:</label>
+											<select required>
+												<option>Old: Multiple</option>
+												<option>New: One File</option>
+											</select>
+											<label>Title*:</label>
+											<input type="text" required>
+											<label>SubTitle on Chart*:</label>
+											<input type="text" required>
+											<label>Identifier*:</label>
+											<input type="text" required>
+										</td>
+										<td>
+											<label>Coming Online On:</label>
+											<input type="text">
+											<label>Previous Total Energy:</label>
+											<input type="text">
+											<label>Previous Total CO2:</label>
+											<input type="text">
+											<label>Capacity (kWp)*:</label>
+											<input type="text" required>
+											<label>URL to Details*:</label>
+											<input type="text" required>
+										</td>
+									<tr></table>
+									<button type="submit" class="button" onsubmit=""><i class="fa fa-plus-square" aria-hidden="true"></i> Add</button>
+                                </form>
+                            </div>
+                            <div class="tabs-panel" id="panel17v" data-equalizer-watch>
+                                <div id="floatdiv">
+                                    <h3>Export Raw Meter Data</h3>
+                                    <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                </div>
+                                <div id="clear"></div>
+                                <form>
+                                    <h4>Choose Array</h4>
+                                    <select required>
+										<option> - select one - </option>
+										<option selected="selected">1. St Lucia Campus</option>
+										<option>2. Gatton Campus</option>
+										<option>3. Heron Island</option>
+										<option>4. Herston Campus</option>
+										<option>5. Gatton Campus</option>
+										<option>6. Gatton PV Pilot Plant (EIF)</option>
+									</select>
+
+                                    <h4>Choose Dates</h4>
+                                    <table border="0">
+                                        <tr>
+                                            <td>
+                                                <label for "startdate">Start Date:</label>
+                                                <input type="date" name="startdate" required>
+                                            </td>
+                                            <td>
+                                                <label for "enddate">End Date:</label>
+                                                <input type="date" name="enddate" required>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <h4>Download</h4>
+                                    <button type="submit" class="button"><i class="fa fa-download" aria-hidden="true"></i> Download File</button>
+                                </form>
+                            </div>
+                            <div class="tabs-panel" id="panel4v" data-equalizer-watch>
+                                <div class="carbon">
+                                    <div id="floatdiv">
+                                        <h3>Carbon Constant</h3>
+                                        <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                    </div>
+                                    <div id="clear"></div>
+                                    <p>Enter the starting date from when the value is valid, the value being in kg/kWh. When an old value becomes obsolete, enter a new valid one with a new start date.</p>
+                                    <table class="table-stack" border="1" style="width:100%">
+                                        <tr>
+                                            <th class="white" bgcolor="#49075e">Start Date</th>
+                                            <th class="white" bgcolor="#49075e">Value (kg/kWh)</th>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="date" value="2010-07-01"></td>
+                                            <td><input type="text" value="0.55"></td>
+                                            <th><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Change</button></th>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="date" value="2011-07-01"></td>
+                                            <td><input type="text" value="0.73"></td>
+                                            <th><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Change</button></th>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="date" value="2012-07-01"></td>
+                                            <td><input type="text" value="0.67"></td>
+                                            <th><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Change</button></th>
+                                        </tr>
+                                        <tr>
+                                            <form>
+                                                <td><input type="text" required></td>
+                                                <td><input type="text" required></td>
+                                                <th><button type="submit" class="button expand"><i class="fa fa-plus-square" aria-hidden="true"></i> Add</button></th>
+                                            </form>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="tabs-panel" id="panel18v" data-equalizer-watch>
+                                <div id="floatdiv">
+                                    <h3>Non PV</h3>
+                                    <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                </div>
+                                <div id="clear"></div>
+                                <p><strong>Weather Station One</strong></p>
+                                <table class="table-stack responsive" border="1" style="width:100%">
+                                    <tbody>
+                                        <tr>
+                                            <th class="white" bgcolor="#49075e">Date</th>
+                                            <th class="white" bgcolor="#49075e">Time</th>
+                                            <th class="white" bgcolor="#49075e">BMS Outside Air Temp - degC</th>
+                                            <th class="white" bgcolor="#49075e">BMS Relative Humidity - %</th>
+                                            <th class="white" bgcolor="#49075e">BMS Insolation W/m2</th>
+                                            <th class="white" bgcolor="#49075e">BMS Wind Speed m/s</th>
+                                            <th class="white" bgcolor="#49075e">BMS Wind Direction - Degrees from North</th>
+                                        </tr>
+                                        <tr>
+                                            <td>2016/01/01</td>
+                                            <td>00:00:00</td>
+                                            <td>20.9</td>
+                                            <td>57.1</td>
+                                            <td>0</td>
+                                            <td>0.6</td>
+                                            <td>-89</td>
+                                            <td><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2016/01/01</td>
+                                            <td>00:01:00</td>
+                                            <td>20.9</td>
+                                            <td>57</td>
+                                            <td>0</td>
+                                            <td>1.4</td>
+                                            <td>-89</td>
+                                            <td><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button></td>
+                                        </tr>
+                                        <tbody>
+                                </table>
+                                <p><strong>Weather Station Two</strong></p>
+                                <table class="table-stack" border="1" style="width:100%">
+                                    <tr>
+                                        <th class="white" bgcolor="#49075e">Date</th>
+                                        <th class="white" bgcolor="#49075e">Time</th>
+                                        <th class="white" bgcolor="#49075e">BMS Outside Air Temp - degC</th>
+                                        <th class="white" bgcolor="#49075e">BMS Relative Humidity - %</th>
+                                        <th class="white" bgcolor="#49075e">BMS Insolation W/m2</th>
+                                        <th class="white" bgcolor="#49075e">BMS Wind Speed m/s</th>
+                                        <th class="white" bgcolor="#49075e">BMS Wind Direction - Degrees from North</th>
+                                    </tr>
+                                    <tr>
+                                        <td>2016/01/01</td>
+                                        <td>00:00:00</td>
+                                        <td>20.9</td>
+                                        <td>57.1</td>
+                                        <td>0</td>
+                                        <td>0.6</td>
+                                        <td>-89</td>
+                                        <td><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2016/01/01</td>
+                                        <td>00:01:00</td>
+                                        <td>20.9</td>
+                                        <td>57</td>
+                                        <td>0</td>
+                                        <td>1.4</td>
+                                        <td>-89</td>
+                                        <td><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button></td>
+                                    </tr>
+
+                                </table>
+                            </div>
+
+                            <div class="tabs-panel" id="panel5v" data-equalizer-watch>
+                                <div class="energyprice">
+                                    <div id="floatdiv">
+                                        <h3>Energy Price</h3>
+                                        <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                    </div>
+                                    <div id="clear"></div>
+                                    <p>Enter the starting date from when the value is valid, the value being in c/kWh. When an old value becomes obselete, just enter a new one, with the new start date.</p>
+                                    <table class="table-stack" border="1" style="width:100%">
+                                        <tr>
+                                            <th class="white" bgcolor="#49075e">Start Date</th>
+                                            <th class="white" bgcolor="#49075e">Value (c/kWh)</th>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="date" value="2010-07-01"></td>
+                                            <td><input type="text" value="12.500"></td>
+                                            <th><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Change</button></th>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="date" value="2011-07-01"></td>
+                                            <td><input type="text" value="10.500"></td>
+                                            <th><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Change</button></th>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="date" value="2012-07-01"></td>
+                                            <td><input type="text" value="11.000"></td>
+                                            <th><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Change</button></th>
+                                        </tr>
+                                        <tr>
+                                            <form>
+                                                <td><input type="text" required></td>
+                                                <td><input type="text" required></td>
+                                                <th><button type="submit" class="button expand"><i class="fa fa-plus-square" aria-hidden="true"></i> Add</button></th>
+                                            </form>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tabs-panel" id="panel6v" data-equalizer-watch>
+                                <div id="floatdiv">
+                                    <h3>Reports</h3>
+                                    <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                </div>
+                                <div id="clear"></div>
+                                <p>Generate reports as required.</p <form <fieldset>
+                                <legend>Dates</legend>
+                                <form>
+                                    <table border="0">
+                                        <tr>
+                                            <td><label for="fromDate">From Date(mm/yyyy)</label> <input type="date" name="fromDate" required></td>
+                                            <td><label for="toDate">To Date(mm/yyyy)</label> <input type="date" name="toDate" required></td>
+                                        </tr>
+                                    </table>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Data type and range</legend>
+                                        Data Required <select name="dataType">
+						          	<option value="Energy">PV Energy (kWh)</option>
+							          	<option value="MissingData">Missing Data</option>
+						          	<option value="Weather">Weather</option>
+							          	<option value="Storage Energy">Storage Energy (kWh)</option>
+					          	</select> Site
+                                        <select name="Site">
+						          	<option value="All Sites Combined">All Sites Combined</option>
+							          	<option value="Gatton">Gatton</option>
+							          	<option value="Heron Island">Heron Island</option>
+						          	<option value="Herston">Herston</option>
+							          	<option value="St Lucia">St Lucia</option>
+					          	</select>
+                                        <select name="Array">
+							          	<option value="allArrays">All Arrays Combined</option>
+							          	<option value="array1">Array 1</option>
+							          	<option value="array2">Array 2</option>
+							          	<option value="array3">Array 3</option>
+							          	<option value="array4">Array 4</option>
+							          	<option value="array5">Array 5</option>
+							          	<option value="array6">Array 6</option>
+				          		</select>
+                                    </fieldset>
+                                    <button class="button" id="button-float-left"><i class="fa fa-eye" aria-hidden="true"></i> View Report</button>
+                                    <button class="button" id="button-float-right"><i class="fa fa-download" aria-hidden="true"></i> Download Report</button>
+                                </form>
+                            </div>
+
+                            <div class="tabs-panel" id="panel8v" data-equalizer-watch>
+                                <div id="floatdiv">
+                                    <h3>Calculate</h3>
+                                    <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                </div>
+                                <div id="clear"></div>
+                                <h4>Re-Calculate Daily Totals</h4>
+                                <p>Re-calculates the daily cumulative energy and average daily power values.</p>
+                                <h5>Calculate Range:</h5>
+                                <form>
+                                    <table border="0">
+                                        <tr>
+                                            <td>
+                                                <label for="startdate">Start Date:</label>
+                                                <input type="date" name="startdate" required>
+                                            </td>
+                                            <td>
+                                                <label for="enddate">End Date:</label>
+                                                <input type="date" name="enddate" required>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <button type="submit" class="button"><i class="fa fa-calculator" aria-hidden="true"></i> Calculate</button>
+                                </form>
+                                <h4>Re-Calculate Best Energy and Power Days</h4>
+                                <p>Forces the re-calculation of the Best Energy and Power Days.</p>
+                                <h5>Calculate Range:</h5>
+                                <form>
+                                    <table border="0">
+                                        <tr>
+                                            <td>
+                                                <label for="startdate">Start Date:</label>
+                                                <input type="date" name="startdate" required>
+                                            </td>
+                                            <td>
+                                                <label for="enddate">End Date:</label>
+                                                <input type="date" name="enddate" required>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <button type="submit" class="button"><i class="fa fa-calculator" aria-hidden="true"></i> Calculate</button>
+                                </form>
+                            </div>
+                            <div class="tabs-panel" id="panel9v" data-equalizer-watch>
+                                <div id="floatdiv">
+                                    <h3>Re-Calculate Best Energy and Power Days</h3>
+                                    <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                </div>
+                                <div id="clear"></div>
+                                <p>Forces the re-calculation of the Best Energy and Power Days.</p>
+                                <div id="float-middle">
+                                    <input type="button" class="button expand" value="Calculate">
+                                </div>
+                            </div>
+                            <div class="tabs-panel" id="panel10v" data-equalizer-watch>
+                                <div id="floatdiv">
+                                    <h3>Manage User Accounts</h3>
+                                    <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                    <button class="button" id="float-right" onclick="openTab(event, 'panel11vb')" style="margin-right: 10px"><div id="upload"><i class="fa fa-cog" aria-hidden="true"></i> Account Settings</div></button>
+                                </div>
+                                <div id="clear"></div>
+                                </br/>
+                                <div class="row">
+                                    <div class="columns large-12">
+                                        <table class="responsive" data-min="5" data-max="100" cellpadding="0" cellspacing="0" class="table-stack" border="1" style="width:100%">
+                                            <tr>
+                                                <th class="white" bgcolor="#49075e">Username</th>
+                                                <th class="white" bgcolor="#49075e">Email</th>
+                                                <th class="white" bgcolor="#49075e">Permission Level</th>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Jill</td>
+                                                <td>jill.smith@uqconnect.edu.au</td>
+                                                <td>Student</td>
+                                                <th><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button></th>
+                                                <th><button type="button" class="button-remove expand"><i class="fa fa-trash" aria-hidden="true"></i> Remove</button></th>
+                                            </tr>
+                                            <tr>
+                                                <td>Eve</td>
+                                                <td>eve.jackson@uqadmin.edu.au</td>
+                                                <td>Staff</td>
+                                                <th><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button></th>
+                                                <th><button type="button" class="button-remove expand"><i class="fa fa-trash" aria-hidden="true"></i> Remove</button></th>
+                                            </tr>
+                                            <tr>
+                                                <td>Jack</td>
+                                                <td>jack.john@uqconnect.edu.au</td>
+                                                <td>Student</td>
+                                                <th><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button></th>
+                                                <th><button type="button" class="button-remove expand"><i class="fa fa-trash" aria-hidden="true"></i> Remove</button></th>
+                                            </tr>
+                                            <tr>
+                                                <td>John</td>
+                                                <td>john.jack@gmail.com</td>
+                                                <td>Staff</td>
+                                                <th><button type="button" class="button expand"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button></th>
+                                                <th><button type="button" class="button-remove expand"><i class="fa fa-trash" aria-hidden="true"></i> Remove</button></th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <button type="button" class="button" onclick="openTab(event, 'panel11v')"><i class="fa fa-plus-square" aria-hidden="true"></i> Create Account</button>
+                            </div>
+                            <div class="tabs-panel" id="panel11v" data-equalizer-watch>
+                                <div id="floatdiv">
+                                    <h3>Add/Change Accounts</h3>
+                                    <button class="button" id="float-right" onclick="openTab(event, 'panel10v')"><div id="upload"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</div></button>
+                                </div>
+                                <div id="clear"></div>
+                                <br/>
+
+                                <div class="row">
+
+                                    <div class="formcontainer">
+                                        <div class="columns large-6 small-12">
+                                            <div id="acctcreate-page" class="formdiv">
+                                                <h5>Create an Account</h5>
+                                                <p>Create a new management account for UQSolar</p>
+                                                <div class="form">
+                                                    <div id="createErrorMessage" class="formErrorMessage"></div>
+                                                    <form class="create-form">
+                                                        <p class="inputhelp">Email Address:</p>
+                                                        <input id="emailcr" type="text" required>
+                                                        <p class="inputhelp">Username:</p>
+                                                        <input id="userncr" type="text" required>
+                                                        <p class="inputhelp">Password:</p>
+                                                        <input id="passfcr" type="password" required>
+                                                        <p class="inputhelp">Retype Password:</p>
+                                                        <input id="passcr" type="password" required>
+                                                        <p>
+                                                            <label id="createradio">
+													Staff   <input id="radiostaff" type="radio" name="permission" value="staff"/>
+													Student   <input type="radio" name="permission" value="student"/>
+													</label>
+                                                        </p>
+                                                        <button class="button" type="submit" onclick="<!-- postCreate() -->"><i class="fa fa-user-plus" aria-hidden="true"></i> Create</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="clear:both"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabs-panel" id="panel11vb" data-equalizer-watch>
+                                <div id="floatdiv">
+                                    <h3>Change Account</h3>
+                                    <button class="button" id="float-right" onclick="openTab(event, 'panel10v')"><div id="upload"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</div></button>
+                                </div>
+                                <div id="clear"></div>
+                                <br/>
+
+                                <div class="row">
+
+                                    <div class="formcontainer">
+                                        <div class="columns large-6 small-12">
+                                            <div id="acctchange-page" class="formdiv">
+                                                <h5>Change account Password</h5>
+                                                <p>Change your account Password</p>
+                                                <div class="form">
+                                                    <div id="changeErrorMessage" class="formErrorMessage"></div>
+                                                    <form class="change-form">
+                                                        <p class="inputhelp">Username:</p>
+                                                        <input id="userncr" type="text" required>
+                                                        <p class="inputhelp">New Password:</p>
+                                                        <input id="passfch" type="password" required>
+                                                        <p class="inputhelp">Retype Password:</p>
+                                                        <input id="passch" type="password" required>
+                                                        <button class="button" type="submit" onclick="postChange()"><i class="fa fa-pencil" aria-hidden="true"></i> Save</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div style="clear:both"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabs-panel" id="panel12v" data-equalizer-watch>
+                                <div id="floatdiv">
+                                    <h3>Sunrise/Sunset Times</h3>
+                                    <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                </div>
+                                <div id="clear"></div>
+
+                                <table class="table-stack" border="1" style="width:100%">
+                                    <tr>
+                                        <th class="white" bgcolor="#49075e">Location</th>
+                                        <th class="white" bgcolor="#49075e">Coordinates</th>
+                                        <th class="white" bgcolor="#49075e">Current Date</th>
+                                        <th class="white" bgcolor="#49075e">Current Sunrise Time</th>
+                                        <th class="white" bgcolor="#49075e">Current Sunset Time</th>
+                                    </tr>
+                                    <tr>
+                                        <td>The University of Queensland</td>
+                                        <td>27.4954° S <br>153.0120° E</td>
+                                        <td><span id="date"></span></td>
+                                        <td><span id="sunrisetime"></span></td>
+                                        <td><span id="sunsettime"></span></td>
+                                    </tr>
+                                </table>
+                                <!-- Time Picker -->
+                                <h4>Choose a date to check sunrise and sunset time</h4><br/>
+                                <input type="date" name="sun" id="choosedate">
+                                <p id="chosensr"></p>
+                                <p id="chosenss"></p>
+
+
+
+                            </div>
+                            <div class="tabs-panel" id="panel14v" data-equalizer-watch>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="tabs-panel" id="panel13v" data-equalizer-watch>
+                                <div id="storagesystem">
+                                    <div id="floatdiv">
+                                        <h3>Storage System Settings</h3>
+                                        <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                    </div>
+                                    <div id="clear"></div>
+                                    <p>Modify or Create a Storage System.</p>
+                                    <form>
+                                        <table class="table-stack" border="1" style="width:100%">
+                                            <tr>
+                                                <th class="white" bgcolor="#49075e">Location</th>
+                                                <th class="white" bgcolor="#49075e">Title</th>
+                                                <th class="white" bgcolor="#49075e">Identifier</th>
+                                            </tr>
+                                            <tr>
+                                                <td><select required>
+											  <option> - select one - </option>
+											  <option selected="selected">All sites combined</option>
+											  <option>St Lucia Campus</option>
+											  <option>Gatton Campus</option>
+											  <option>Heron Island</option>
+											  <option>Herston Campus</option>
+											  <option>Gatton PV Pilot Plant (EIF)</option>
+											</select></td>
+                                                <td>
+                                                    <input type="text" placeholder="ExampleTitle" required>
+                                                </td>
+                                                <td>
+                                                    <input type="text" placeholder="32A1" required>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="white" bgcolor="#49075e">Coming Online On </th>
+                                                <th class="white" bgcolor="#49075e">Capacity (kWp)</th>
+                                                <th class="white" bgcolor="#49075e">Url to Details </th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="date" required>
+                                                </td>
+                                                <td>
+                                                    <input type="text" placeholder="In kWh" required>
+                                                </td>
+                                                <td>
+                                                    <input type="text" placeholder="https://example.com" required>
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                        <button class="button" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+                                    </form>
+                                    <div id="clear"></div>
+                                    <table class="table-stack" border="1" style="width:100%">
+                                        <tr>
+                                            <th class="white" bgcolor="#49075e">Location</th>
+                                            <th class="white" bgcolor="#49075e">Title</th>
+                                        </tr>
+                                        <tr>
+                                            <td><select>
+							          <option> - select one - </option>
+							          <option selected="selected">All sites combined</option>
+							          <option>St Lucia Campus</option>
+							          <option>Gatton Campus</option>
+							          <option>Heron Island</option>
+							          <option>Herston Campus</option>
+							          <option>Gatton PV Pilot Plant (EIF)</option>
+							        </select></td>
+                                            <td>
+                                                <input type="text" value="All arrays combined">
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="table-stack" border="1" style="width:100%">
+                                        <tr>
+                                            <th class="white" bgcolor="#49075e">Identifier</th>
+                                            <th class="white" bgcolor="#49075e">Coming Online On</th>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" value="31B2" readonly></td>
+                                            <td><input type="date" value="2016-07-12"></td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="table-stack" border="1" style="width:100%">
+                                        <tr>
+                                            <th class="white" bgcolor="#49075e">Capacity (kWh)</th>
+                                            <th class="white" bgcolor="#49075e">URL to Details</th>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" value="257"></td>
+                                            <td><input type="text" value="http://www.uq.edu.au/solarenergy/pv-array/energy-storage"></td>
+                                        </tr>
+                                    </table>
+                                    <p> Will prompt for confirmation on entry update if "Identifier" is already in use.</p>
+                                    <button class="button" id="button-float-right"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update Storage System</button>
+                                </div>
+                            </div>
+
+
+
+                            <div class="tabs-panel" id="panel16v" data-equalizer-watch>
+                                <div id="floatdiv">
+                                    <h3>Change Log</h3>
+                                    <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                </div>
+                                <div id="clear"></div>
+                                <p>"Download Report" gives a file containing changes made for a log.</p>
+                                <table class="table-stack" border="1" style="width:100%">
+                                    <tr>
+                                        <th class="white" bgcolor="#49075e">UQ Username</th>
+
+                                        <th class="white" bgcolor="#49075e">System Section</th>
+                                        <th class="white" bgcolor="#49075e">Date/Time</th>
+                                    </tr>
+                                    <tr>
+                                        <td>uqgwil10</td>
+                                        <td>Locations</td>
+                                        <td>18:30 09/05/2016</td>
+                                        <th><button class="button expand"><i class="fa fa-download" aria-hidden="true"></i>	Download Report</button></th>
+                                    </tr>
+                                    <tr>
+                                        <td>uqjwall15</td>
+                                        <td>Energy Prices</td>
+                                        <td>14:20 07/05/2016</td>
+                                        <th><button class="button expand"><i class="fa fa-download" aria-hidden="true"></i> Download Report</button></th>
+                                    </tr>
+                                    <tr>
+                                        <td>uqthard</td>
+                                        <td>Reports</td>
+                                        <td>13:45 06/05/2016</td>
+                                        <th><button class="button expand"><i class="fa fa-download" aria-hidden="true"></i> Download Report</button></th>
+                                    </tr>
+                                    <tr>
+                                        <td>uqrmoll</td>
+                                        <td>Add/Change Accounts</td>
+                                        <td>12:00 03/05/2016</td>
+                                        <th><button class="button expand"><i class="fa fa-download" aria-hidden="true"></i> Download Report</button></th>
+                                    </tr>
+                                </table>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="tabs-panel" id="panel30v" data-equalizer-watch>
+                        <div id="acboards">
+                            <div id="floatdiv">
+                                <h3>AC Boards</h3>
+                                <a href="/" class="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                            </div>
+                            <div id="clear"></div>
+                            <div style="float:left" class="button" onClick="openTab(event, 'panel3v'); closeview()"><a id="upload"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to Normal View</a></div>
+                            <p>Both the 'Title' and 'Identifier' are required. Any entry without an identifier will be dropped.</p>
+
+
+                            <h4>Arrays</h4>
+                            <div id="button-float-left">
+                                <div id="arraymenu">
+                                    <ul>
+                                        <li><a class="button"><i class="fa fa-list" aria-hidden="true"></i> 1-5</a></li>
+                                        <li><a class="button"><i class="fa fa-list" aria-hidden="true"></i> 6-10</a></li>
+                                        <li><a class="button"><i class="fa fa-list" aria-hidden="true"></i> 11-15</a></li>
+                                        <li><a class="button"><i class="fa fa-list" aria-hidden="true"></i> 16-20</a></li>
+                                        <li><a class="button"><i class="fa fa-list" aria-hidden="true"></i> 21-25</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="float:right" class="button" onClick="openTab(event, 'acboardsb'); closeview()"><a id="upload"><i class="fa fa-plus-square" aria-hidden="true"></i> Add New Array</a></div>
+                            <div id="clear"></div>
+
+                            <div id="arraytable">
+                                <table border="1" style="width:100%">
+                                    <tr>
+                                        <th class="white" bgcolor="#49075e">No.</th>
+                                        <th class="white" bgcolor="#49075e">Location</th>
+                                        <th class="white" bgcolor="#49075e">Title</th>
+                                        <th class="white" bgcolor="#49075e">SubTitle on Chart</th>
+                                        <th class="white" bgcolor="#49075e">Identifier</th>
+                                        <th class="white" bgcolor="#49075e">Date File Method</th>
+                                        <th class="white" bgcolor="#49075e">Coming Online On</th>
+                                        <th class="white" bgcolor="#49075e">URL to Details</th>
+                                        <th class="white" bgcolor="#49075e">Capacity (kWp)</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><select disabled>
+													<option> - select one - </option>
+													<option selected="selected">All sites combined</option>
+													<option>St Lucia Campus</option>
+													<option>Gatton Campus</option>
+													<option>Heron Island</option>
+													<option>Herston Campus</option>
+													<option>Gatton PV Pilot Plant (EIF)</option>
+												</select></td>
+                                        <td><input name="title" value="All arrays combined"></td>
+                                        <td><input name="subtitle" readonly></td>
+                                        <td><input id="identifier" readonly></td>
+                                        <td><select disabled>
+													<option>Old: Multiple</option>
+													<option>New: One File</option>
+												</select></td>
+                                        <td><input type="date" id="comingonlineon" readonly></td>
+                                        <td><input name="urldetails" readonly></td>
+                                        <td><input id="capacity" readonly></td>
+                                        <td>
+                                            <div style="float:right" class="button" onClick="openTab(event, 'acboardsa'); closeview()"><a id="upload"><i class="fa fa-upload" aria-hidden="true"></i> Upload Data File</a></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><select>
+													<option> - select one - </option>
+													<option>All sites combined</option>
+													<option selected="selected">St Lucia Campus</option>
+													<option>Gatton Campus</option>
+													<option>Heron Island</option>
+													<option>Herston Campus</option>
+													<option>Gatton PV Pilot Plant (EIF)</option>
+												</select></td>
+                                        <td><input name="title" value="UQ Centre, St Lucia"></td>
+                                        <td><input name="subtitle" value="Experimental Array - Sometimes"></td>
+                                        <td><input id="identifier" value="027A"></td>
+                                        <td><select>
+													<option>Old: Multiple</option>
+													<option>New: One File</option>
+												</select></td>
+                                        <td><input type="date" id="comingonlineon" value=""></td>
+                                        <td><input name="urldetails" value="http://www.uq.edu.au/solarenergy"></td>
+                                        <td><input id="capacity" value="433"></td>
+                                        <td>
+                                            <div style="float:right" class="button" onClick="openTab(event, 'acboardsa'); closeview()"><a id="upload"><i class="fa fa-upload" aria-hidden="true"></i> Upload Data File</a></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><select>
+													<option selected="selected"> - select one - </option>
+													<option>All sites combined</option>
+													<option>St Lucia Campus</option>
+													<option>Gatton Campus</option>
+													<option>Heron Island</option>
+													<option>Herston Campus</option>
+													<option>Gatton PV Pilot Plant (EIF)</option>
+												</select></td>
+                                        <td><input name="title" value="Concentrating Array"></td>
+                                        <td><input name="subtitle" value="Experimental Array - Sometimes"></td>
+                                        <td><input id="identifier" value="SOLF"></td>
+                                        <td><select>
+													<option>Old: Multiple</option>
+													<option>New: One File</option>
+												</select></td>
+                                        <td><input type="date" id="comingonlineon" value="2011-06-08"></td>
+                                        <td><input name="urldetails" value="http://www.uq.edu.au/solarenergy"></td>
+                                        <td><input id="capacity" value="8"></td>
+                                        <td>
+                                            <div style="float:right" class="button" onClick="openTab(event, 'acboardsa'); closeview()"><a id="upload"><i class="fa fa-upload" aria-hidden="true"></i> Upload Data File</a></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><select>
+													<option> - select one - </option>
+													<option>All sites combined</option>
+													<option selected="selected">St Lucia Campus</option>
+													<option>Gatton Campus</option>
+													<option>Heron Island</option>
+													<option>Herston Campus</option>
+													<option>Gatton PV Pilot Plant (EIF)</option>
+												</select></td>
+                                        <td><input name="title" value="Multi Level Car Park #1"></td>
+                                        <td><input name="subtitle" value="Experimental Array - Sometimes"></td>
+                                        <td><input id="identifier" value="98A"></td>
+                                        <td><select>
+													<option>Old: Multiple</option>
+													<option>New: One File</option>
+												</select></td>
+                                        <td><input type="date" id="comingonlineon" value="2011-06-08"></td>
+                                        <td><input name="urldetails" value="http://www.uq.edu.au/solarenergy"></td>
+                                        <td><input id="capacity" value="339"></td>
+                                        <td>
+                                            <div style="float:right" class="button" onClick="openTab(event, 'acboardsa'); closeview()"><a id="upload"><i class="fa fa-upload" aria-hidden="true"></i> Upload Data File</a></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td><select>
+													<option> - select one - </option>
+													<option>All sites combined</option>
+													<option selected="selected">St Lucia Campus</option>
+													<option>Gatton Campus</option>
+													<option>Heron Island</option>
+													<option>Herston Campus</option>
+													<option>Gatton PV Pilot Plant (EIF)</option>
+												</select></td>
+                                        <td><input name="title" value="Multi Level Car Park #2"></td>
+                                        <td><input name="subtitle" value="Experimental Array - Sometimes"></td>
+                                        <td><input id="identifier" value="98B"></td>
+                                        <td><select>
+													<option>Old: Multiple</option>
+													<option>New: One File</option>
+												</select></td>
+                                        <td><input type="date" id="comingonlineon" value="2011-06-08"></td>
+                                        <td><input name="urldetails" value="http://www.uq.edu.au/solarenergy"></td>
+                                        <td><input id="capacity" value="339"></td>
+                                        <td>
+                                            <div style="float:right" class="button" onClick="openTab(event, 'acboardsa'); closeview()"><a id="upload"><i class="fa fa-upload" aria-hidden="true"></i> Upload Data File</a></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <button class="button"><i class="fa fa-hdd-o" aria-hidden="true"></i> Save Changes</button>
+                        </div>
+                    </div>
+                    <div class="tabs-panel" id="acboardsa" data-equalizer-watch>
+                        <div id="floats">
+                            <h3>Import Array Data</h3>
+                            <button class="button" onclick="openTab(event, 'panel3v')"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back<button>
+
+								</div>
+								<div id="clear"></div>
+								<form id="dataimport">
+									<h4>Choose Array</h4>
+									<select required>
+										<option> - select one - </option>
+										<option selected="selected">1. St Lucia Campus - 027A</option>
+										<option>2. St Lucia Campus - SOLF</option>
+										<option>3. Heron Island - 703</option>
+										<option>4. St Lucia Campus - 98A</option>
+										<option>5. St Lucia Campus - 98B</option>
+										<option>6. Gatton Campus - 8167</option>
+										<option>7. Herston Campus - 883</option>
+										<option>8. Gatton PV Pilot Plant(EIF) - 8300_DAT</option>
+									</select>
+									<h4>Upload File</h4>
+									<p>The uploaded file must be in a csv format. The data has to be in the following format:</p>
+									<ul>
+										<li>Date: MM/DD/YYY</li>
+										<li>Time: HH:MM:SS</li>
+										<li>Instantaneous Energy: Integer</li>
+										<li>Cumulative Energy: Integer</li>
+										<li>Energy Consumed: Integer</li>
+									</ul>
+									<input type="file" name="file" id="file" required>
+									<label for="file"><i class="fa fa-file" aria-hidden="true"></i> Choose a File</label><br>
+									<button type="submit" class="button" onclick=""><i class="fa fa-upload" aria-hidden="true"></i> Upload File</button>
+                            </form>
+                        </div>
+                        <div class="tabs-panel" id="acboardsb" data-equalizer-watch>
+                            <div id="floats">
+                                <h3>Add New Array</h3>
+                                <button class="button" onclick="openTab(event, 'panel3v')"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back<button>
+								</div>
+								<div id="clear"></div>
+								<form>
+									<table class = "table-stack" border="1"><tr>
+										<td>
+											<label>Location*:</label>
+											<select required>
+												<option> - select one - </option>
+												<option selected="selected">1. St Lucia Campus</option>
+												<option>2. Gatton Campus</option>
+												<option>3. Heron Island</option>
+												<option>4. Herston Campus</option>
+												<option>5. Gatton Campus</option>
+												<option>6. Gatton PV Pilot Plant (EIF)</option>
+											</select>
+											<label>Data File Method*:</label>
+											<select required>
+												<option>Old: Multiple</option>
+												<option>New: One File</option>
+											</select>
+											<label>Title*:</label>
+											<input type="text" required>
+											<label>SubTitle on Chart*:</label>
+											<input type="text" required>
+											<label>Identifier*:</label>
+											<input type="text" required>
+										</td>
+										<td>
+											<label>Coming Online On:</label>
+											<input type="text">
+											<label>Previous Total Energy:</label>
+											<input type="text">
+											<label>Previous Total CO2:</label>
+											<input type="text">
+											<label>Capacity (kWp)*:</label>
+											<input type="text" required>
+											<label>URL to Details*:</label>
+											<input type="text" required>
+										</td>
+									<tr></table>
+									<button type="submit" class="button"><i class="fa fa-plus-square" aria-hidden="true"></i> Add</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="push"></div>
+                    </div>
+                    <div class="footer">
+                        <div class="no_list">
+                            <div class="site-footer">
+                                <div class="site-footer__content uq-purple white">
+                                    <div class="row">
+                                        <div class="columns large-9 medium-8">
+                                            <span class="footer__copyright">© The University of Queensland</span>
+                                            <div class="footer__contact">
+                                                Enquiries: <a href="tel:+61733651111" class="footer__link footer__enquiries-phone">+61 7 3365 1111</a> &nbsp; | &nbsp; <a href="http://uq.edu.au/contacts" class="footer__link footer__contacts-link">Contact directory</a>
+                                            </div>
+                                            <div class="footer__meta">
+                                                <abbr title="Australian Business Number">ABN</abbr>: 63 942 912 684 &nbsp; | &nbsp;
+                                                <abbr title="Commonwealth Register of Institutions and Courses for Overseas Students">CRICOS</abbr> Provider No: <a class="footer__link cricos__link" href="http://www.uq.edu.au/about/cricos-link" rel="external">00025B</a>
+                                            </div>
+                                        </div>
+                                        <div class="columns large-3 medium-4">
+                                            <!-- TODO: review social media -->
+                                            <div class="site-footer__emergency-contact">
+                                                <strong class="site-footer__sub-title">Emergency</strong><br> Phone: <a href="tel:+61733653333" class="footer__link footer__emergency-phone">3365 3333</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="site-footer__footer">
+                                            <div class="columns large-9 medium-8">
+                                                <a href="http://www.uq.edu.au/terms-of-use/" rel="external" class="footer__link footer__terms-link">Privacy &amp; Terms of use</a> &nbsp; | &nbsp;
+                                                <a href="http://www.uq.edu.au/feedback" rel="external" class="footer__link footer__feedback-link">Feedback</a>
+                                            </div>
+                                            <div class="columns large-3 medium-4">
+                                                <a href="/user?destination=home" class="login__link"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="js/vendor/jquery.js"></script>
+                    <script src="js/foundation.min.js"></script>
+                    <script src="js/foundation.js"></script>
+                    <script src="js/what-input.js"></script>
+                    <script src="js/app.js"></script>
+                    <script src="js/stacktable.js"></script>
+                    <script src="js/main.js"></script>
+                    <script src="js/accountmanagement.js"></script>
+                    <script src="js/highcharts.js"></script>
+                    <script src="js/highcharts.src.js"></script>
+                    <script src="js/highcharts-more.js"></script>
+                    <script src="https://code.highcharts.com/highcharts.js"></script>
+                    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                    <script src="js/sun-calculate.js"></script>
+                    <script src="js/table-mobile.js"></script>
+                    <script type="text/javascript" src="js/ng_responsive_tables.js"></script>
+</body>
+
+</html>

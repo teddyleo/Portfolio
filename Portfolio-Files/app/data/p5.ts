@@ -10,7 +10,15 @@ export const projects = [
                 id: "gameoflife", 
                 name: "Game of Life",
                 description: "This is an implementation of Conway's Game of Life, where a two-dimensuional grid consists of cells that can be either alive or dead. Click the canvas to generate a random set of alive/dead cells."
+            }, { 
+                id: "treegen", 
+                name: "Tree Generation",
+                description: "This sketch uses a L-System to generate a collection of production rules in the form of a string, which is used to create the tree-like structure."
             }
+        ]
+    }, {
+        items: [
+            
         ]
     }
 

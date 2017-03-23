@@ -1,0 +1,9 @@
+<h1>404 Page Not Found!</h1>
+
+<div *ngFor="let project of projects" class="row">
+    <div *ngFor="let item of project.items" class="p5container col-sm-4">
+        <h3>{{ item.name }}</h3>
+        <div id="{{ item.id }}"></div>
+        <p>{{ item.description }}</p>
+    </div>
+</div>
